@@ -24,7 +24,7 @@ public class DaoNotas {
 
     }
 
-    //INSERTAR DATOS;
+    //INSERTAR DATOS A LA BD;
     public long insert(Nota_Serial c){
 
         ContentValues cv = new ContentValues();
@@ -41,7 +41,7 @@ public class DaoNotas {
 
     }
 
-    //ACTUALIZAR DATOS;
+    //ACTUALIZAR DATOS EN LA BD;
     public long update(Nota_Serial c){
 
         ContentValues cv = new ContentValues();
@@ -58,14 +58,14 @@ public class DaoNotas {
 
     }
 
-    //ELIMINAR DATOS;
+    //ELIMINAR LOS DATOS DE LA BD;
     public int delete(String id){
 
         return  _midb.delete("registros","_id='"+id+"'",null);
 
     }
 
-    //CREACION DE LISATAS;
+    //CREACION DE LISTAS;
     public List<Nota_Serial> buscarTodos(int tipo) {
 
         List<Nota_Serial> notesArrayList = new ArrayList<Nota_Serial>();
@@ -98,7 +98,7 @@ public class DaoNotas {
 
     }
 
-    //BUSQUEDA POR ID;
+    //BUSQUEDA DE LAS NOTAS POR ID;
     public Nota_Serial buscarUno(int iden) {
 
         Nota_Serial notesUno = new Nota_Serial();

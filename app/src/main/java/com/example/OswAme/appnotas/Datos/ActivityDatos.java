@@ -324,15 +324,9 @@ public class ActivityDatos extends AppCompatActivity implements View.OnClickList
 
 
 
-
-
-
-
-
-
     @Override
     public void onClick(View v) {
-
+            //obtener los datos de la fecha (día, mes, año).
         if (v == btnDatePicker) {
 
             // Get Current Date
@@ -352,7 +346,7 @@ public class ActivityDatos extends AppCompatActivity implements View.OnClickList
             datePickerDialog.show();
 
         }
-
+        //obtener los datos de la hora (horas, minutos).
         if (v == btnTimePicker) {
 
             // Get Current Time

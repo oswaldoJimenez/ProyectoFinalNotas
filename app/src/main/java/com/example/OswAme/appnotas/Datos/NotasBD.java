@@ -29,16 +29,16 @@ public class NotasBD extends SQLiteOpenHelper{
 
 
 
-    public static final String[]COLUMNS_ALERTAS = {"_id","id_Tarea","titulo","descripcion","fechaAlerta","horaAlerta"};
-    public static final String TABLE_ALERTAS_NAME="alertas";
+    public static final String[]COLUMNS_NOTIFICACIONES = {"_id","id_Tarea","titulo","descripcion","fechaAlerta","horaAlerta"};
+    public static final String TABLE_NOTIFICACIONES_NAME="notificaciones";
 
     private  final String TABLE_ALERTAS = "create table alertas ("+
-            COLUMNS_ALERTAS[0]+" integer primary key autoincrement, "+
-            COLUMNS_ALERTAS[1]+" integer not null," +
-            COLUMNS_ALERTAS[2]+" varchar(100) not null,"+
-            COLUMNS_ALERTAS[3]+" text not null,"+
-            COLUMNS_ALERTAS[4]+" varchar(12) null,"+
-            COLUMNS_ALERTAS[5]+" varchar(12) null);";
+            COLUMNS_NOTIFICACIONES[0]+" integer primary key autoincrement, "+
+            COLUMNS_NOTIFICACIONES[1]+" integer not null," +
+            COLUMNS_NOTIFICACIONES[2]+" varchar(100) not null,"+
+            COLUMNS_NOTIFICACIONES[3]+" text not null,"+
+            COLUMNS_NOTIFICACIONES[4]+" varchar(12) null,"+
+            COLUMNS_NOTIFICACIONES[5]+" varchar(12) null);";
 
 
 
