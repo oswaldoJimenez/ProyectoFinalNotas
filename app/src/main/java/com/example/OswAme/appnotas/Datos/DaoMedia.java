@@ -9,9 +9,7 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class DaoMedia {
-
     private Context _contexto;
     private SQLiteDatabase _midb;
 
@@ -23,7 +21,7 @@ public class DaoMedia {
 
     }
 
-    //INSERTAR DATOS;
+    //INSERTAR MEDIA;
     public long insert(Media c){
 
         ContentValues cv = new ContentValues();
@@ -36,7 +34,7 @@ public class DaoMedia {
 
     }
 
-    //ACTUALIZAR DATOS;
+    //ACTUALIZAR MEDIA;
     public long update(Media c){
 
         ContentValues cv = new ContentValues();
@@ -49,14 +47,14 @@ public class DaoMedia {
 
     }
 
-    //ELIMINAR DATOS (ID);
+    //ELIMINAR MEDIA MEDIANTE ID;
     public int delete(String id){
 
         return  _midb.delete("media","_id='"+id+"'",null);
 
     }
 
-    //ELIMINAR DATOS (ID TAREA);
+    //ELIMINAR MEDIA ID TAREA;
     public int deleteTODAS(String id){
 
         return  _midb.delete("media","id_Tarea='"+id+"'",null);

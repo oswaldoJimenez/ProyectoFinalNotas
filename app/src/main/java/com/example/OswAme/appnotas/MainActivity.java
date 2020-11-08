@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity implements ItemFragment.OnLi
 
         btn_recorder = (Button)findViewById(R.id.btn_rec);
 
+        //permisos para acceder a archivos multimedia guardados en la memoria
         if (ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE)
                 != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getApplicationContext(),
                 Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {

@@ -33,12 +33,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
-/**
- * Created by Deliziusz on 13/Nov/2019.
- */
-
 public class ActivityMedia extends AppCompatActivity {
-
 
     Button btn_aud;
     int tomaID = 0;
@@ -136,8 +131,6 @@ public class ActivityMedia extends AppCompatActivity {
 
 
     }
-
-
 
 
 
