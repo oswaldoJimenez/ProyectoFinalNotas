@@ -20,6 +20,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.OswAme.appnotas.Datos.DaoMedia;
 import com.example.OswAme.appnotas.Datos.Media;
 import com.example.OswAme.appnotas.R;
 import com.example.OswAme.appnotas.grabadora;
@@ -33,7 +34,6 @@ import java.util.List;
 import java.util.Locale;
 
 public class ActivityMedia extends AppCompatActivity {
-
 
     Button btn_aud;
     int tomaID = 0;
@@ -131,8 +131,6 @@ public class ActivityMedia extends AppCompatActivity {
 
 
     }
-
-
 
 
 
