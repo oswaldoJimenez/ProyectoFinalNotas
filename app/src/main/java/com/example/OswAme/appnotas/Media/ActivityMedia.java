@@ -20,7 +20,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.example.OswAme.appnotas.Datos.DaoMedia;
 import com.example.OswAme.appnotas.Datos.Media;
 import com.example.OswAme.appnotas.R;
 import com.example.OswAme.appnotas.grabadora;
@@ -32,10 +31,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
-
-/**
- * Created by Deliziusz on 13/Nov/2019.
- */
 
 public class ActivityMedia extends AppCompatActivity {
 

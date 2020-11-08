@@ -15,9 +15,6 @@ import com.example.OswAme.appnotas.Datos.Media;
 import com.example.OswAme.appnotas.R;
 
 import java.util.List;
-/**
- * Created by Deliziusz on 13/Nov/2019.
- */
 
 public class MediaAdapter extends RecyclerView.Adapter<MediaAdapter.MediaViewHolder>{
 
