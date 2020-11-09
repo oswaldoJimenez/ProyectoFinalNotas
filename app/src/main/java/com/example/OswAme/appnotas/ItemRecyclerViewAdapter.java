@@ -74,7 +74,6 @@ public class ItemRecyclerViewAdapter extends RecyclerView.Adapter<ItemRecyclerVi
                     // fragment is attached to one) that an item has been selected.
                     interactionListener.onListFragmentInteraction(holder.dummyModelItem);
                 }
-
             }
 
         });

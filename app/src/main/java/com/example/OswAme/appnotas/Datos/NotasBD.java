@@ -73,7 +73,6 @@ public class NotasBD extends SQLiteOpenHelper{
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
 
         try{
-
             sqLiteDatabase.execSQL("DROP TABLE IF EXISTS registros");
             sqLiteDatabase.execSQL("DROP TABLE IF EXISTS alertas");
             sqLiteDatabase.execSQL("DROP TABLE IF EXISTS media");

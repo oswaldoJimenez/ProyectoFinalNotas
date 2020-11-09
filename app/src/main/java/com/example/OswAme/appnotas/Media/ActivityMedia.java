@@ -54,7 +54,6 @@ public class ActivityMedia extends AppCompatActivity {
         btn_aud.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
             }
         });
 

@@ -32,7 +32,6 @@ public class grabadora extends AppCompatActivity {
             ActivityCompat.requestPermissions(grabadora.this, new String[]
                     {Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.RECORD_AUDIO}, 1000);
         }
-
     }
 
      public void Recorder(View view){

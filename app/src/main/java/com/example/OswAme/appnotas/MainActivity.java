@@ -83,7 +83,6 @@ public class MainActivity extends AppCompatActivity implements ItemFragment.OnLi
 //}
 
 
-
     public void cargar(){
         // define TabLayout
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
@@ -107,7 +106,6 @@ public class MainActivity extends AppCompatActivity implements ItemFragment.OnLi
         // Listeners
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.addOnTabSelectedListener(getOnTabSelectedListener(viewPager));
-
     }
 
     public void reiniciarDatos(){
@@ -137,12 +135,7 @@ public class MainActivity extends AppCompatActivity implements ItemFragment.OnLi
         // Listeners
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.addOnTabSelectedListener(getOnTabSelectedListener(viewPager));
-
-
-
     }
-
-
 
     /**
      * Listener for tab selected
@@ -167,7 +160,6 @@ public class MainActivity extends AppCompatActivity implements ItemFragment.OnLi
 
                     tabFlag="1";
                     nuevo.setText(R.string.btnNewTarea);
-
                 }
 
             }
@@ -334,9 +326,7 @@ public class MainActivity extends AppCompatActivity implements ItemFragment.OnLi
                             }
 
                         }
-
                         dialog.dismiss();
-
                     }
 
                 })
