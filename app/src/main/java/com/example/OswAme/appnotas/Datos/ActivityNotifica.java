@@ -67,7 +67,6 @@ public class ActivityNotifica extends AppCompatActivity {
         DaoNotifica dao = new DaoNotifica(ActivityNotifica.this);
         adp = new ArrayAdapter<Alerta>(ActivityNotifica.this, android.R.layout.simple_list_item_1,dao.buscarTodosDeTarea(ident));
         lista.setAdapter(adp);
-
     }
 
 
