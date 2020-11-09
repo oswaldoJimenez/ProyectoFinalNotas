@@ -23,7 +23,6 @@ import com.example.OswAme.appnotas.Datos.Nota;
 import com.example.OswAme.appnotas.Datos.Nota_Serial;
 import com.example.OswAme.appnotas.Media.ActivityMedia;
 import com.example.OswAme.appnotas.Media.ActivityMediaAudio;
-import com.example.OswAme.appnotas.Media.ActivityMediaVideo;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -276,15 +275,6 @@ public class MainActivity extends AppCompatActivity implements ItemFragment.OnLi
                             //Toast.makeText(MainActivity.this, "Presiono Multimedia", Toast.LENGTH_SHORT).show();
 
                             Intent intent = new Intent(getApplication(),ActivityMedia.class);
-                            intent.putExtra("idregistro_integer", model.getId_nota());
-
-                            startActivityForResult(intent,1020);
-
-                        }else if(opc[which].equals("Video")){
-
-                            //Toast.makeText(MainActivity.this, "Presiono Multimedia", Toast.LENGTH_SHORT).show();
-
-                            Intent intent = new Intent(getApplication(), ActivityMediaVideo.class);
                             intent.putExtra("idregistro_integer", model.getId_nota());
 
                             startActivityForResult(intent,1020);

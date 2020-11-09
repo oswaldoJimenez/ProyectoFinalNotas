@@ -21,7 +21,6 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.OswAme.appnotas.Datos.DaoMedia;
-import com.example.OswAme.appnotas.Datos.DaoVideo;
 import com.example.OswAme.appnotas.Datos.Media;
 import com.example.OswAme.appnotas.R;
 
@@ -68,20 +67,13 @@ public class ActivityMediaAudio extends AppCompatActivity {
     public void cargar(){
 
         List<Media> items = new ArrayList<>();
-
-        DaoVideo dao = new DaoVideo(ActivityMediaAudio.this);
-        items = dao.buscarTodosDeTarea1(tomaID);
-
         recycler.setHasFixedSize(true);
 
         // Usar un administrador para LinearLayout
         lManager = new LinearLayoutManager(this);
         recycler.setLayoutManager(lManager);
 
-        // Crear un nuevo adaptador
-        adapter = new VideoAdapter(items);
         recycler.setAdapter(adapter);
-
     }
 
     private String mDirAbsoluto = null;
