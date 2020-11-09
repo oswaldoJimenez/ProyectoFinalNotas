@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.zombie.deliziusz.appnotas.Datos.ActivityDatos">
+    android:background="@drawable/fondoclash"
+    tools:context="com.example.OswAme.appnotas.Datos.ActivityDatos">
 
     <LinearLayout
         android:layout_width="316dp"
@@ -89,7 +90,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
-                android:background="#1041b5"
+                android:background="#579EC1"
                 android:text="@string/btnFecha"
                 android:textColor="@android:color/white"
                 android:textSize="18sp" />
@@ -116,7 +117,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
-                android:background="#FF1041B5"
+                android:background="#579EC1"
                 android:text="HORA"
                 android:textColor="@android:color/background_light"
                 android:textSize="18sp"
@@ -141,9 +142,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="#FF1041B5"
+                android:background="#579EC1"
                 android:onClick="btnIngresa_click"
-                android:text="AGREGAR"
+                android:text="ADD"
                 android:textColor="@android:color/white"
                 android:textSize="18sp" />
 

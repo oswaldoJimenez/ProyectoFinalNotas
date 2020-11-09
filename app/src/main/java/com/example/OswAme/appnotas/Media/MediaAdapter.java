@@ -24,12 +24,9 @@ public class MediaAdapter extends RecyclerView.Adapter<MediaAdapter.MediaViewHol
 
     public void setOnLongClickListener(View.OnLongClickListener onLongClickListener){
         this.onLongClickListener = onLongClickListener;
-
     }
 
-
     public static class MediaViewHolder extends RecyclerView.ViewHolder {
-
         // Campos respectivos de un item
         public ImageView imagen;
         public TextView nombre;
@@ -41,9 +38,7 @@ public class MediaAdapter extends RecyclerView.Adapter<MediaAdapter.MediaViewHol
             imagen = (ImageView) v.findViewById(R.id.foto);
             nombre = (TextView) v.findViewById(R.id.txt_titulo);
             ruta = (TextView) v.findViewById(R.id.txt_ruta);
-
         }
-
     }
 
     public MediaAdapter(List<Media> items) {
@@ -74,14 +69,7 @@ public class MediaAdapter extends RecyclerView.Adapter<MediaAdapter.MediaViewHol
 
         viewHolder.nombre.setText(items.get(i).getId_media()+" - "+items.get(i).getId_TareaNota()+" - "+items.get(i).getDescripMedia());
         viewHolder.ruta.setText("Ruta: "+String.valueOf(items.get(i).getDir_uri()));
-
-
-
-
-
     }
-
-
 
 
     private static final int SCALE_FACTOR_IMAGE_VIEW = 4;
