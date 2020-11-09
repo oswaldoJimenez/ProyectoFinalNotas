@@ -57,7 +57,6 @@ public class ActivityMedia extends AppCompatActivity {
             }
         });
 
-
         btn_recorder = findViewById(R.id.btn_rec);
 
         if (ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE)
