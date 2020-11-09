@@ -136,23 +136,17 @@ public class ActivityNotifica extends AppCompatActivity {
                                         public void onClick(DialogInterface dialog, int which) {
 
                                             //Toast.makeText(MainActivity.this, "Presiono CANCEL", Toast.LENGTH_SHORT).show();
-
                                         }
 
                                     })
                                     .create();
-
                             dialog2.show();
-
                         }
-
                         dialog.dismiss();
-
                     }
 
                 })
                 .create();
-
         dialog.show();
 
     }
