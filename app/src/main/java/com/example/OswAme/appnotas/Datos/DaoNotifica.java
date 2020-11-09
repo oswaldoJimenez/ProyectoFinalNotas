@@ -29,13 +29,13 @@ public class DaoNotifica {
 
         ContentValues cv = new ContentValues();
 
-        cv.put(NotasBD.COLUMNS_ALERTAS[1],c.getId_tarea());
-        cv.put(NotasBD.COLUMNS_ALERTAS[2],c.getTituloAlerta());
-        cv.put(NotasBD.COLUMNS_ALERTAS[3],c.getDescripcionAlerta());
-        cv.put(NotasBD.COLUMNS_ALERTAS[4],c.getFechaAlerta());
-        cv.put(NotasBD.COLUMNS_ALERTAS[5],c.getHoraAlerta());
+        cv.put(NotasBD.COLUMNS_NOTIFICACIONES[1],c.getId_tarea());
+        cv.put(NotasBD.COLUMNS_NOTIFICACIONES[2],c.getTituloAlerta());
+        cv.put(NotasBD.COLUMNS_NOTIFICACIONES[3],c.getDescripcionAlerta());
+        cv.put(NotasBD.COLUMNS_NOTIFICACIONES[4],c.getFechaAlerta());
+        cv.put(NotasBD.COLUMNS_NOTIFICACIONES[5],c.getHoraAlerta());
 
-        return _midb.insert(NotasBD.TABLE_ALERTAS_NAME,null,cv) ;
+        return _midb.insert(NotasBD.TABLE_NOTIFICACIONES_NAME,null,cv) ;
 
     }
 
@@ -44,13 +44,13 @@ public class DaoNotifica {
 
         ContentValues cv = new ContentValues();
 
-        cv.put(NotasBD.COLUMNS_ALERTAS[1],c.getId_tarea());
-        cv.put(NotasBD.COLUMNS_ALERTAS[2],c.getTituloAlerta());
-        cv.put(NotasBD.COLUMNS_ALERTAS[3],c.getDescripcionAlerta());
-        cv.put(NotasBD.COLUMNS_ALERTAS[4],c.getFechaAlerta());
-        cv.put(NotasBD.COLUMNS_ALERTAS[5],c.getHoraAlerta());
+        cv.put(NotasBD.COLUMNS_NOTIFICACIONES[1],c.getId_tarea());
+        cv.put(NotasBD.COLUMNS_NOTIFICACIONES[2],c.getTituloAlerta());
+        cv.put(NotasBD.COLUMNS_NOTIFICACIONES[3],c.getDescripcionAlerta());
+        cv.put(NotasBD.COLUMNS_NOTIFICACIONES[4],c.getFechaAlerta());
+        cv.put(NotasBD.COLUMNS_NOTIFICACIONES[5],c.getHoraAlerta());
 
-        return _midb.update(NotasBD.TABLE_ALERTAS_NAME, cv, "_id=?", new String[] { String.valueOf( c.getId_alerta())});
+        return _midb.update(NotasBD.TABLE_NOTIFICACIONES_NAME, cv, "_id=?", new String[] { String.valueOf( c.getId_alerta())});
 
     }
 

@@ -4,8 +4,6 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-
-
 public class NotasBD extends SQLiteOpenHelper{
 
     //CONSTRUCCION DE LA BD;
@@ -50,15 +48,6 @@ public class NotasBD extends SQLiteOpenHelper{
             COLUMNS_MEDIA[1]+" integer not null," +
             COLUMNS_MEDIA[2]+" varchar not null,"+
             COLUMNS_MEDIA[3]+" varchar(100) null);";
-
-
-
-
-
-
-
-
-
 
 
     public NotasBD(Context contexto) {
