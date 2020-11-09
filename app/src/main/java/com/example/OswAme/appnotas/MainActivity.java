@@ -204,11 +204,11 @@ public class MainActivity extends AppCompatActivity implements ItemFragment.OnLi
 
         if(model.getTipo()==0) {
 
-            aux =  new String[]{"Editar","Eliminar","Foto","Video","Audio", "Alertas"};
+            aux =  new String[]{"Editar","Eliminar","Foto","Audio"};
 
         }else if(model.getTipo()==1){
 
-            aux =  new String[]{"Editar","Eliminar","Foto","Video", "Audio" ,"Alertas"};
+            aux =  new String[]{"Editar","Eliminar","Foto","Audio"};
 
         }
 
@@ -351,7 +351,6 @@ public class MainActivity extends AppCompatActivity implements ItemFragment.OnLi
 
                 })
                 .create();
-
         dialog.show();
 
     }
@@ -380,9 +379,7 @@ public class MainActivity extends AppCompatActivity implements ItemFragment.OnLi
             ));
 
         }
-
         return l.toArray(new Nota[l.size()]);
-
     }
 
 
@@ -407,11 +404,9 @@ public class MainActivity extends AppCompatActivity implements ItemFragment.OnLi
                     ls.get(i).getHora_limite(),
                     ls.get(i).getChecalo()
             ));
-
         }
 
         return l.toArray(new Nota[l.size()]);
-
     }
 
 
@@ -435,7 +430,6 @@ public class MainActivity extends AppCompatActivity implements ItemFragment.OnLi
 
             startActivityForResult(intent,1001);
         }
-
     }
 
 
@@ -551,10 +545,10 @@ public class MainActivity extends AppCompatActivity implements ItemFragment.OnLi
 
     }
 
-    public void video(View v) {
+    /*public void video(View v) {
         startActivity(new
                 Intent(this, CapturaVideo.class));
     }
-
+    */
 
 }

@@ -22,7 +22,6 @@
         android:theme="@style/AppTheme">
         <activity android:name=".Media.ActivityMediaAudio" />
         <activity android:name=".Media.ActivityMediaVideo" />
-        <activity android:name=".CapturaVideo" />
         <activity android:name=".grabadora" />
 
         <provider
