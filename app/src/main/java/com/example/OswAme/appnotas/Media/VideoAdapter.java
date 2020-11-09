@@ -16,9 +16,6 @@ import com.example.OswAme.appnotas.R;
 
 import java.util.List;
 
-/**
- * Created by Deliziusz on 13/Nov/2019.
- */
 
 public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.MediaViewHolder>{
 
@@ -28,12 +25,10 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.MediaViewHol
 
     public void setOnLongClickListener(View.OnLongClickListener onLongClickListener){
         this.onLongClickListener = onLongClickListener;
-
     }
 
 
     public static class MediaViewHolder extends RecyclerView.ViewHolder {
-
         // Campos respectivos de un item
         public ImageView imagen;
         public TextView nombre;
@@ -142,11 +137,6 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.MediaViewHol
         } catch (Exception e) {
 
         }
-
         return bitmap;
-
     }
-
-
-
 }
