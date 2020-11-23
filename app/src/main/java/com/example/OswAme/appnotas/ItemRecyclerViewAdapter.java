@@ -46,7 +46,7 @@ public class ItemRecyclerViewAdapter extends RecyclerView.Adapter<ItemRecyclerVi
 
         }else if(dm.getTipo()==1){
 
-            holder.imagen.setImageResource(R.drawable.tarea1);
+            holder.imagen.setImageResource(R.drawable.alfiler);
             holder.titulo.setText(dm.getId_nota()+" - "+dm.getTitulo());
             holder.descrip.setText(dm.getDescripcion());
             holder.fechaIni.setText("Creada:"+" "+dm.getFecha_creacion());
