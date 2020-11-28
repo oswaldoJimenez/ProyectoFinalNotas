@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.media.MediaRecorder;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.annotation.NonNull;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.ActivityCompat;
@@ -15,6 +16,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.OswAme.appnotas.Datos.ActivityDatos;
 import com.example.OswAme.appnotas.Datos.ActivityNotifica;
@@ -24,6 +26,7 @@ import com.example.OswAme.appnotas.Datos.Nota_Serial;
 import com.example.OswAme.appnotas.Media.ActivityMedia;
 import com.example.OswAme.appnotas.Media.ActivityMediaAudio;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,6 +38,7 @@ public class MainActivity extends AppCompatActivity implements ItemFragment.OnLi
     private MediaRecorder grabacion;
     private String archivoSalida = null; //asignamos un nombre a la pista de audio que vamos a agregar
     private Button btn_recorder;
+    private Button btn_grabar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +48,7 @@ public class MainActivity extends AppCompatActivity implements ItemFragment.OnLi
         startService(new Intent(getBaseContext(),Servicio.class));
 
         btn_recorder = (Button)findViewById(R.id.btn_rec);
+        btn_grabar = (Button)findViewById(R.id.btn_newMedia1);
 
         //permisos para acceder a archivos multimedia guardados en la memoria
         if (ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE)
@@ -54,32 +59,32 @@ public class MainActivity extends AppCompatActivity implements ItemFragment.OnLi
         }
     }
 
-//public void btn_audio(View v){
-  //  public void Recorder(View view){
-    //    if(grabacion == null){
-        //    archivoSalida = Environment.getExternalStorageDirectory().getAbsolutePath()+"/Grabacion.mp3";
-      //      grabacion = new MediaRecorder();
-          //  grabacion.setAudioSource(MediaRecorder.AudioSource.MIC);
-           // grabacion.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
-            //grabacion.setAudioEncoder(MediaRecorder.OutputFormat.AMR_NB);
-            //grabacion.setOutputFile(archivoSalida);
+        public void btn_recorder(View v){
+            //public void Recorder(View view){
+        if(grabacion == null){
+           archivoSalida = Environment.getExternalStorageDirectory().getAbsolutePath()+"/Grabacion.mp3";
+            grabacion = new MediaRecorder();
+            grabacion.setAudioSource(MediaRecorder.AudioSource.MIC);
+          grabacion.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
+          grabacion.setAudioEncoder(MediaRecorder.OutputFormat.AMR_NB);
+          grabacion.setOutputFile(archivoSalida);
 
-            //try{
-             //   grabacion.prepare();
-               // grabacion.start();
-            //}catch (IOException e){
-            //}
+          try{
+             grabacion.prepare();
+           grabacion.start();
+          }catch (IOException e){
+          }
 
-            //btn_recorder.setBackgroundResource(R.drawable.rec);
-            //Toast.makeText(getApplicationContext(), "Grabando...", Toast.LENGTH_SHORT).show();
-        //}else if(grabacion!= null) {
-          //  grabacion.stop();
-            //grabacion.release();
-            //grabacion = null;
-            //btn_recorder.setBackgroundResource(R.drawable.stop_rec);
-            //Toast.makeText(getApplicationContext(), "Grabación finalizada...", Toast.LENGTH_SHORT).show();
-        //}
-    //}
+          btn_recorder.setBackgroundResource(R.drawable.podcast);
+          Toast.makeText(getApplicationContext(), "Grabando...", Toast.LENGTH_SHORT).show();
+        }else if(grabacion!= null) {
+            grabacion.stop();
+          grabacion.release();
+          grabacion = null;
+          btn_recorder.setBackgroundResource(R.drawable.detener);
+          Toast.makeText(getApplicationContext(), "Grabación finalizada...", Toast.LENGTH_SHORT).show();
+        }
+    }
 //}
 
 
