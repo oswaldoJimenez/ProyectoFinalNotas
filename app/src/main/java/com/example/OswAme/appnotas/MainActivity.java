@@ -195,11 +195,11 @@ public class MainActivity extends AppCompatActivity implements ItemFragment.OnLi
 
         if(model.getTipo()==0) {
 
-            aux =  new String[]{"Editar","Eliminar"};//Foto,audio
+            aux =  new String[]{"Editar","Eliminar","Foto","Audio"};//Foto,audio
 
         }else if(model.getTipo()==1){
 
-            aux =  new String[]{"Editar","Eliminar"};//Foto,audio
+            aux =  new String[]{"Editar","Eliminar","Foto","Audio"};//Foto,audio
 
         }
 
