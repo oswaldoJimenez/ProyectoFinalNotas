@@ -183,6 +183,7 @@ public class ActivityMedia extends AppCompatActivity {
         }
     }
 
+
     private File nombrarArchivo(Context context, String album, String nombre, String extension) throws IOException {
 
         return new File(obtenerDirectorioPublico(context, album), nombre + extension);
@@ -243,12 +244,12 @@ public class ActivityMedia extends AppCompatActivity {
 
                         if(dao.insert(new Media(0,objNota.getId_TareaNota(),objNota.getDir_uri(),objNota.getDescripMedia()))>0) {
 
-                            Toast.makeText(getBaseContext(), "Foto guardada", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getBaseContext(), "Se ha guardado la foto", Toast.LENGTH_SHORT).show();
                             cargar();
 
                         }else{
 
-                            Toast.makeText(getBaseContext(), "La foto no pudo ser guardada", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getBaseContext(), "No se pudo guardar la foto", Toast.LENGTH_SHORT).show();
 
                         }
 

@@ -52,14 +52,6 @@
 
 
 
-
-
-
-
-
-
-
-
         public DBOpenHelper(Context contexto) {
 
             super(contexto, DB_NAME, null, DB_VERSION);
