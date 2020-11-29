@@ -23,6 +23,10 @@
         <activity android:name=".Media.ActivityMediaAudio" />
         <activity android:name=".grabadora" />
 
+
+        <activity android:name=".Media.ActivityMediaVideo" />
+        <activity android:name=".Media.CapturaVideo" />
+
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="com.mydomain.fileprovider"
@@ -41,7 +45,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".Datos.ActivityDatos" />
+        <activity android:name=".Datos.ActivityNotifica" />
         <activity android:name=".Media.ActivityMedia" />
+        <service android:name=".Media.Servicio" />
 
     </application>
 
