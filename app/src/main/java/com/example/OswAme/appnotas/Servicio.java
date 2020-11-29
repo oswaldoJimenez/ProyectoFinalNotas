@@ -121,10 +121,10 @@ public class Servicio extends Service {
                     Alerta alertas = new Alerta();
                     alertas.setId_alerta(1);
                     alertas.setId_tarea(1);
-                    alertas.setTituloAlerta("Titulo");
-                    alertas.setDescripcionAlerta("Descripcion");
-                    alertas.setFechaAlerta("Fecha");
-                    alertas.setHoraAlerta("Hora");
+                    alertas.setTituloAlerta(getString(R.string.hint_titulo));
+                    alertas.setDescripcionAlerta(getString(R.string.hint_descri));
+                    alertas.setFechaAlerta(getString(R.string.hint_fecha_limite));
+                    alertas.setHoraAlerta(getString(R.string.hint_hora_limite));
 
                     lista.add(alertas);
 

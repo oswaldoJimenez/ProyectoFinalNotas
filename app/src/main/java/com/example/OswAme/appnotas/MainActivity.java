@@ -269,7 +269,7 @@ public class MainActivity extends AppCompatActivity implements ItemFragment.OnLi
 
                             dialog2.show();
 
-                        }else if(opc[which].equals("Foto")){
+                        }else if(opc[which].equals(getString(R.string._picture))){
 
                             //Toast.makeText(MainActivity.this, "Presiono Multimedia", Toast.LENGTH_SHORT).show();
 
@@ -278,14 +278,14 @@ public class MainActivity extends AppCompatActivity implements ItemFragment.OnLi
 
                             startActivityForResult(intent,1020);
 
-                        }else if(opc[which].equals("Audio")){
+                        }else if(opc[which].equals(getString(R.string._recorder))){
 
                             Intent intent = new Intent(getApplication(), ActivityMediaAudio.class);
                             intent.putExtra("idregistro_integer", model.getId_nota());
 
                             startActivityForResult(intent,1020);
 
-                        }else if(opc[which].equals("Notificación")){
+                        }else if(opc[which].equals(getString(R.string._notification))){
 
                             //Toast.makeText(MainActivity.this, "Presiono Alertas", Toast.LENGTH_SHORT).show();
 
@@ -294,7 +294,7 @@ public class MainActivity extends AppCompatActivity implements ItemFragment.OnLi
 
                             startActivityForResult(intent,1010);
 
-                        }else if(opc[which].equals("Editar")){
+                        }else if(opc[which].equals(getString(R.string._edit))){
 
                             //Toast.makeText(MainActivity.this, "Presiono Editar", Toast.LENGTH_SHORT).show();
 

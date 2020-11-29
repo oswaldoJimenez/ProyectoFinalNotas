@@ -81,7 +81,7 @@ public class ActivityNotifica extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
-                        if(opc[which].equals("Editar")){
+                        if(opc[which].equals(getString( R.string._edit))){
 
                             Intent intent = new Intent(getApplication(),ActivityDatos.class);
                             intent.putExtra("tipo_integer", 5);
@@ -95,7 +95,7 @@ public class ActivityNotifica extends AppCompatActivity {
 
                             startActivityForResult(intent,1005);
 
-                        }else if(opc[which].equals("Eliminar")) {
+                        }else if(opc[which].equals(getString(R.string._delete))) {
 
                             AlertDialog dialog2 = new AlertDialog.Builder(ActivityNotifica.this)
                                     .setTitle(R.string.del_alert_Title)
@@ -162,8 +162,6 @@ public class ActivityNotifica extends AppCompatActivity {
         intent.putExtra("integer_ID_tarea", tomaID);
 
         startActivityForResult(intent,1004);
-
-
     }
 
 
