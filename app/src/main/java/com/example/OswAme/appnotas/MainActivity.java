@@ -222,7 +222,7 @@ public class MainActivity extends AppCompatActivity implements ItemFragment.OnLi
 
                         //Toast.makeText(MainActivity.this,opc[which],Toast.LENGTH_SHORT).show();
 
-                        if(opc[which].equals("Eliminar")){
+                        if(opc[which].equals(getString(R.string._delete))){
 
                             AlertDialog dialog2 = new AlertDialog.Builder(MainActivity.this)
                                     .setTitle(R.string.del_alert_Title)
