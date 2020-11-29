@@ -57,7 +57,7 @@
             android:layout_alignParentRight="true"
             android:layout_marginTop="12dp"
             android:maxLines="3"
-            android:text="@string/card_detalle"
+            android:text="Descrcipción"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
         <TextView
