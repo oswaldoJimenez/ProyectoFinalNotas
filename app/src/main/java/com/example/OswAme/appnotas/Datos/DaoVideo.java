@@ -9,14 +9,12 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.List;
 
-
-
 public class DaoVideo {
 
     private Context _contexto;
     private SQLiteDatabase _midb;
 
-    //CREACION DE LA DB;
+
     public DaoVideo(Context contexto){
 
         this._contexto = contexto;
@@ -24,7 +22,7 @@ public class DaoVideo {
 
     }
 
-    //INSERTAR DATOS;
+
     public long insert(Media c){
 
         ContentValues cv = new ContentValues();
@@ -37,7 +35,7 @@ public class DaoVideo {
 
     }
 
-    //ACTUALIZAR DATOS;
+
     public long update(Media c){
 
         ContentValues cv = new ContentValues();
@@ -50,21 +48,21 @@ public class DaoVideo {
 
     }
 
-    //ELIMINAR DATOS (ID);
+
     public int delete(String id){
 
         return  _midb.delete("media","_id='"+id+"'",null);
 
     }
 
-    //ELIMINAR DATOS (ID TAREA);
+
     public int deleteTODAS(String id){
 
         return  _midb.delete("media","id_Tarea='"+id+"'",null);
 
     }
 
-    //CREACION DE LISTA;
+
     public List<Media> buscarTodos() {
 
         List<Media> notesArrayList = new ArrayList<Media>();
@@ -93,7 +91,7 @@ public class DaoVideo {
 
     }
 
-    //BUSQUEDA POR ID TAREA;
+
     public List<Media> buscarTodosDeTarea1(int iden) {
 
         List<Media> notesArrayList = new ArrayList<Media>();
@@ -122,7 +120,7 @@ public class DaoVideo {
 
     }
 
-    //BUSQUEDA POR ID;
+
     public Media buscarUno(int iden) {
 
         Media notesUno = new Media();
