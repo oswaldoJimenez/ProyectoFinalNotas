@@ -1,5 +1,5 @@
 <resources>
-    <string name="Enlace">DeliziuszAppNotas</string>
+    <string name="Enlace">NotitasPro</string>
     <string name="Audio">Audio</string>
     <string name="tv1">ActivityMedia</string>
     <string name="Anterior">Anterior</string>
@@ -66,6 +66,11 @@
     <string name="card_checaStatusBAD">PENDING</string>
     <string name="card_checaStatusGOOD">COMPLETE</string>
 
+    <string name="_edit">Edit</string>
+    <string name="_delete">Delete</string>
+    <string name="_picture">Picture</string>
+    <string name="_recorder">Recorder</string>
+    <string name="_notification">Notification</string>
 
     <string name="btn_ingresa_addNota">ADD NOTE</string>
     <string name="btn_ingresa_addTarea">ADD TASK</string>

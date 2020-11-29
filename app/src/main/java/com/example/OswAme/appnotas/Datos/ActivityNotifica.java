@@ -163,6 +163,7 @@ public class ActivityNotifica extends AppCompatActivity {
 
         startActivityForResult(intent,1004);
 
+
     }
 
 
@@ -180,8 +181,9 @@ public class ActivityNotifica extends AppCompatActivity {
 
                 if(dao.insert(new Alerta(0,objAlert.getId_tarea(),objAlert.getTituloAlerta(),objAlert.getDescripcionAlerta(),objAlert.getFechaAlerta(),objAlert.getHoraAlerta()))>0) {
 
-                    Toast.makeText(getBaseContext(), R.string.toast_alertaCreada, Toast.LENGTH_SHORT).show();
                     cargardatos(tomaID);
+                    Toast.makeText(getBaseContext(), R.string.toast_alertaCreada, Toast.LENGTH_SHORT).show();
+
 
                 }else{
 

@@ -20,7 +20,9 @@ import android.widget.Toast;
 
 import com.example.OswAme.appnotas.Datos.ActivityDatos;
 import com.example.OswAme.appnotas.Datos.ActivityNotifica;
+import com.example.OswAme.appnotas.Datos.Alerta;
 import com.example.OswAme.appnotas.Datos.DaoNotas;
+import com.example.OswAme.appnotas.Datos.DaoNotifica;
 import com.example.OswAme.appnotas.Datos.Nota;
 import com.example.OswAme.appnotas.Datos.Nota_Serial;
 import com.example.OswAme.appnotas.Media.ActivityMedia;
@@ -200,11 +202,11 @@ public class MainActivity extends AppCompatActivity implements ItemFragment.OnLi
 
         if(model.getTipo()==0) {
 
-            aux =  new String[]{"Editar","Eliminar","Foto","Audio"};//Foto,audio
+            aux =  new String[]{getString(R.string._edit), getString(R.string._delete),getString(R.string._picture),getString(R.string._recorder)};//Foto,audio
 
         }else if(model.getTipo()==1){
 
-            aux =  new String[]{"Editar","Eliminar","Foto","Audio"};//Foto,audio
+            aux =  new String[]{getString(R.string._edit),getString(R.string._delete),getString(R.string._picture),getString(R.string._recorder),getString(R.string._notification)};//Foto,audio
 
         }
 
@@ -212,7 +214,7 @@ public class MainActivity extends AppCompatActivity implements ItemFragment.OnLi
 
         AlertDialog dialog = new AlertDialog.Builder(this)
                 .setTitle(R.string.alert_Title)
-                .setIcon(R.mipmap.ic_launcher)
+                .setIcon(R.drawable.notas)
                 .setItems(opc, new DialogInterface. OnClickListener(){
 
                     @Override
@@ -283,7 +285,7 @@ public class MainActivity extends AppCompatActivity implements ItemFragment.OnLi
 
                             startActivityForResult(intent,1020);
 
-                        }else if(opc[which].equals("Alertas")){
+                        }else if(opc[which].equals("Notificación")){
 
                             //Toast.makeText(MainActivity.this, "Presiono Alertas", Toast.LENGTH_SHORT).show();
 

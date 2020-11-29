@@ -74,7 +74,7 @@ public class Servicio extends Service {
 
         Uri defaultSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM);
 
-        int icono = R.mipmap.ic_launcher;
+        int icono = R.drawable.notas;
 
         long hora = System.currentTimeMillis();
 

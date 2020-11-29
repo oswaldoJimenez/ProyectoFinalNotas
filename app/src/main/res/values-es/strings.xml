@@ -15,6 +15,12 @@
     <string name="search">Search Demo</string>
     <string name="submitted">submitted</string>
 
+    <string name="_edit">Editar</string>
+    <string name="_delete">Eliminar</string>
+    <string name="_picture">Foto</string>
+    <string name="_recorder">Audio</string>
+    <string name="_notification">Notificacion</string>
+
     <string name="app_name">AppNotas</string>
 
     <string name="title_tab0">NOTAS</string>
