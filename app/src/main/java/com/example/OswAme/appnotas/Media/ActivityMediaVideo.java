@@ -18,6 +18,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.OswAme.appnotas.Datos.DaoMedia;
+import com.example.OswAme.appnotas.Datos.DaoVideo;
 import com.example.OswAme.appnotas.Datos.Media;
 import com.example.OswAme.appnotas.R;
 

@@ -15,8 +15,6 @@ public class Video extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_captura_video2);
 
         if (ContextCompat.checkSelfPermission(Video.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(CapturaVideo.this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
