@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000000"
-    tools:context=".CapturaVideo">
+    android:background="@drawable/fondoclash"
+    tools:context=".Media.CapturaVideo">
 
     <ImageButton
         android:id="@+id/imageButton2"
@@ -19,7 +19,7 @@
         android:onClick="TomarVideo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/encender" />
+        app:srcCompat="@drawable/video" />
 
 </android.support.constraint.ConstraintLayout>
 
