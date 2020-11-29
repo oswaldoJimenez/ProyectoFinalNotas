@@ -19,10 +19,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.OswAme.appnotas.Datos.ActivityDatos;
-import com.example.OswAme.appnotas.Datos.ActivityNotifica;
-import com.example.OswAme.appnotas.Datos.Alerta;
 import com.example.OswAme.appnotas.Datos.DaoNotas;
-import com.example.OswAme.appnotas.Datos.DaoNotifica;
 import com.example.OswAme.appnotas.Datos.Nota;
 import com.example.OswAme.appnotas.Datos.Nota_Serial;
 import com.example.OswAme.appnotas.Media.ActivityMedia;
@@ -47,7 +44,6 @@ public class MainActivity extends AppCompatActivity implements ItemFragment.OnLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         cargar();
-        startService(new Intent(getBaseContext(),Servicio.class));
 
         btn_recorder = (Button)findViewById(R.id.btn_rec);
         btn_grabar = (Button)findViewById(R.id.btn_newMedia1);
@@ -206,7 +202,7 @@ public class MainActivity extends AppCompatActivity implements ItemFragment.OnLi
 
         }else if(model.getTipo()==1){
 
-            aux =  new String[]{getString(R.string._edit),getString(R.string._delete),getString(R.string._picture),getString(R.string._recorder),getString(R.string._notification)};//Foto,audio
+            aux =  new String[]{getString(R.string._edit),getString(R.string._delete),getString(R.string._picture),getString(R.string._recorder)};//Foto,audio
 
         }
 
@@ -284,15 +280,6 @@ public class MainActivity extends AppCompatActivity implements ItemFragment.OnLi
                             intent.putExtra("idregistro_integer", model.getId_nota());
 
                             startActivityForResult(intent,1020);
-
-                        }else if(opc[which].equals(getString(R.string._notification))){
-
-                            //Toast.makeText(MainActivity.this, "Presiono Alertas", Toast.LENGTH_SHORT).show();
-
-                            Intent intent = new Intent(getApplication(),ActivityNotifica.class);
-                            intent.putExtra("idtarea_integer", model.getId_nota());
-
-                            startActivityForResult(intent,1010);
 
                         }else if(opc[which].equals(getString(R.string._edit))){
 

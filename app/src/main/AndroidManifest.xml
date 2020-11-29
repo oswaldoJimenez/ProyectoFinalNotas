@@ -41,10 +41,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".Datos.ActivityDatos" />
-        <activity android:name=".Datos.ActivityNotifica" />
         <activity android:name=".Media.ActivityMedia" />
 
-        <service android:name=".Servicio" />
     </application>
 
 </manifest>

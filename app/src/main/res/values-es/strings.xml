@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="Enlace">DeliziuszAppNotas</string>
+    <string name="Enlace">NotitasPro</string>
     <string name="Audio">Audio</string>
     <string name="tv1">ActivityMedia</string>
     <string name="Anterior">Anterior</string>
@@ -19,7 +19,6 @@
     <string name="_delete">Eliminar</string>
     <string name="_picture">Foto</string>
     <string name="_recorder">Audio</string>
-    <string name="_notification">Notificacion</string>
 
 
     <string name="app_name">AppNotas</string>
@@ -105,7 +104,6 @@
     <string name="hint_fecha_create">Fecha de creacion</string>
     <string name="hint_fecha_limite">Fecha limite</string>
     <string name="hint_hora_limite">Hora limite</string>
-    <string name="card_detalle">Detalles</string>
 
     <string name="check_label">Cumplida</string>
 
