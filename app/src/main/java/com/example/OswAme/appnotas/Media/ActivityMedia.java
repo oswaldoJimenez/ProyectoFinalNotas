@@ -142,7 +142,7 @@ public class ActivityMedia extends AppCompatActivity {
 
 
     public void btnMedia_click(View v){
-        Toast.makeText(ActivityMedia.this,"Tomar foto",Toast.LENGTH_SHORT).show();
+        Toast.makeText(ActivityMedia.this,getString(R.string._takepicture),Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         File file = null;
         try {
@@ -165,10 +165,10 @@ public class ActivityMedia extends AppCompatActivity {
         try {
             int permissionCheck = ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA);
             if (permissionCheck == PackageManager.PERMISSION_GRANTED) {
-                Toast.makeText(getApplicationContext(), "Tienes permiso :3", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(), "Tienes permiso :3", Toast.LENGTH_SHORT).show();
                 startActivityForResult(intent, REQUEST_CODE_CAMARA);
             } else {
-                Toast.makeText(getApplicationContext(), "No tienes permiso :c", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(), "No tienes permiso :c", Toast.LENGTH_SHORT).show();
                 if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
                     if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.CAMERA)) {
                     } else {
@@ -244,19 +244,18 @@ public class ActivityMedia extends AppCompatActivity {
 
                         if(dao.insert(new Media(0,objNota.getId_TareaNota(),objNota.getDir_uri(),objNota.getDescripMedia()))>0) {
 
-                            Toast.makeText(getBaseContext(), "Se ha guardado la foto", Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(getBaseContext(), "Se ha guardado la foto", Toast.LENGTH_SHORT).show();
                             cargar();
 
                         }else{
 
-                            Toast.makeText(getBaseContext(), "No se pudo guardar la foto", Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(getBaseContext(), "No se pudo guardar la foto", Toast.LENGTH_SHORT).show();
 
                         }
 
                     }catch (Exception err){
 
                         Toast.makeText(getBaseContext(),err.getMessage(),Toast.LENGTH_LONG).show();
-
                     }
 
                 }

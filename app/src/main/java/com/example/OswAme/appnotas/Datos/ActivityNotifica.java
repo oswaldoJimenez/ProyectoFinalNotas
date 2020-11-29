@@ -61,6 +61,7 @@ public class ActivityNotifica extends AppCompatActivity {
 
     }
 
+
     ArrayAdapter<Alerta> adp;
     public void cargardatos(int ident){
 

@@ -50,7 +50,7 @@
         android:background="@drawable/redondeado"
         android:onClick="btnCheckList_click"
         android:radius="100dip"
-        android:text="NUEVA NOTA"
+        android:text="@string/btn_ingresa_addNota"
         android:textColor="@android:color/background_light"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"

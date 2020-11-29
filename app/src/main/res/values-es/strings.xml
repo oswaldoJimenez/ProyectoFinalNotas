@@ -94,7 +94,8 @@
     <string name="confirmToast_editTarea">Tarea editada</string>
     <string name="confirmToast_editNoti">Notificacion editada</string>
 
-
+    <string name="_takepicture">Take a picture</string>
+    <string name="_audio">Reconding Audio</string>
 
     <string name="btnFecha">FECHA</string>
     <string name="btnHora">HORA</string>
@@ -104,6 +105,7 @@
     <string name="hint_fecha_create">Fecha de creacion</string>
     <string name="hint_fecha_limite">Fecha limite</string>
     <string name="hint_hora_limite">Hora limite</string>
+    <string name="card_detalle">Detalles</string>
 
     <string name="check_label">Cumplida</string>
 

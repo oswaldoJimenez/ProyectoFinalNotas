@@ -4,7 +4,7 @@
     <string name="tv1">ActivityMedia</string>
     <string name="Anterior">Anterior</string>
     <string name="tv2">grabadora</string>
-    <string name="Reproducir">Reproducir</string>
+    <string name="Reproducir">Play</string>
 
     <string name="action_settings">Settings</string>
     <string name="action_help">Help</string>
@@ -63,14 +63,18 @@
 
     <string name="card_fechaCreate">Created:</string>
     <string name="card_fechaLimit">Ends:</string>
-    <string name="card_checaStatusBAD">PENDING</string>
-    <string name="card_checaStatusGOOD">COMPLETE</string>
+    <string name="card_checaStatusBAD">Pending</string>
+    <string name="card_checaStatusGOOD">Complete</string>
+
 
     <string name="_edit">Edit</string>
     <string name="_delete">Delete</string>
     <string name="_picture">Picture</string>
     <string name="_recorder">Recorder</string>
     <string name="_notification">Notification</string>
+
+    <string name="_takepicture">Take a picture</string>
+    <string name="_audio">Reconding Audio</string>
 
     <string name="btn_ingresa_addNota">ADD NOTE</string>
     <string name="btn_ingresa_addTarea">ADD TASK</string>

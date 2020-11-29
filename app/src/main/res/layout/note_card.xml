@@ -43,7 +43,7 @@
             android:layout_below="@+id/txt_titulo"
             android:layout_alignStart="@+id/txt_titulo"
             android:layout_alignLeft="@+id/txt_titulo"
-            android:text="Creada: DD-MM-AAAA"
+            android:text="@string/card_fechaCreate"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
         <TextView
@@ -57,7 +57,7 @@
             android:layout_alignParentRight="true"
             android:layout_marginTop="12dp"
             android:maxLines="3"
-            android:text="Detalle nota"
+            android:text="@string/card_detalle"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
         <TextView
@@ -67,7 +67,7 @@
             android:layout_below="@+id/txt_fechaIni"
             android:layout_alignStart="@+id/txt_fechaIni"
             android:layout_alignLeft="@+id/txt_fechaIni"
-            android:text="Finaliza: DD-MM-AAAA / HH:SS"
+            android:text="@string/card_fechaLimit"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
         <TextView

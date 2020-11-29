@@ -29,7 +29,7 @@
         android:layout_marginBottom="69dp"
         android:background="#FF1041B5"
         android:onClick="reproducir"
-        android:text="Reproducir"
+        android:text="@string/Reproducir"
         android:textColor="@android:color/white" />
 
     <Button
@@ -43,7 +43,7 @@
         android:layout_alignParentBottom="true"
         android:background="#FF1041B5"
         android:onClick="Recorder"
-        android:text="GRABAR AUDIO"
+        android:text="@string/_audio"
         android:textColor="@android:color/white" />
 
     <android.support.v7.widget.RecyclerView
