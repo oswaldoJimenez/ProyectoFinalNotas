@@ -19,7 +19,7 @@
         android:onClick="TomarVideo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/video" />
+        app:srcCompat="@drawable/imgvideo" />
 
 </android.support.constraint.ConstraintLayout>
 
