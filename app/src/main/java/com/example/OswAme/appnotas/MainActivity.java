@@ -199,11 +199,11 @@ public class MainActivity extends AppCompatActivity implements ItemFragment.OnLi
 
         if(model.getTipo()==0) {
 
-            aux =  new String[]{getString(R.string._edit), getString(R.string._delete),getString(R.string._picture),getString(R.string._recorder)};//Foto,audio
+            aux =  new String[]{getString(R.string._edit), getString(R.string._delete),getString(R.string._picture),getString(R.string._recorder),getString(R.string._video)};//Foto,audio
 
         }else if(model.getTipo()==1){
 
-            aux =  new String[]{getString(R.string._edit),getString(R.string._delete),getString(R.string._picture),"Video",getString(R.string._recorder)};//Foto,audio
+            aux =  new String[]{getString(R.string._edit),getString(R.string._delete),getString(R.string._picture),getString(R.string._video),getString(R.string._recorder)};//Foto,audio
 
         }
 
@@ -275,7 +275,7 @@ public class MainActivity extends AppCompatActivity implements ItemFragment.OnLi
 
                             startActivityForResult(intent,1020);
 
-                        }else if(opc[which].equals("Video")){
+                        }else if(opc[which].equals(getString(R.string._video))){
 
                             //Toast.makeText(MainActivity.this, "Presiono Multimedia", Toast.LENGTH_SHORT).show();
 
