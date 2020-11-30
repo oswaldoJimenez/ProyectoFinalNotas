@@ -60,6 +60,8 @@
     <string name="alert_opcMult">Show media</string>
     <string name="alert_opcDel">Delete</string>
 
+    <string name="video">Recording video</string>
+
 
     <string name="card_fechaCreate">Created:</string>
     <string name="card_fechaLimit">Ends:</string>
