@@ -71,7 +71,6 @@ public class NotasBD extends SQLiteOpenHelper{
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-
         try{
             sqLiteDatabase.execSQL("DROP TABLE IF EXISTS registros");
             sqLiteDatabase.execSQL("DROP TABLE IF EXISTS alertas");
@@ -79,7 +78,5 @@ public class NotasBD extends SQLiteOpenHelper{
             onCreate(sqLiteDatabase);
 
         }catch (Exception err){}
-
     }
-
 }

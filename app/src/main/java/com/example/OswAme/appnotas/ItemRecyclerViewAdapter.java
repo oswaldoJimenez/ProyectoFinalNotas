@@ -38,19 +38,19 @@ public class ItemRecyclerViewAdapter extends RecyclerView.Adapter<ItemRecyclerVi
         if(dm.getTipo()==0){
 
             holder.imagen.setImageResource(R.drawable.portap);
-            holder.titulo.setText(dm.getId_nota()+" - "+dm.getTitulo());
+            holder.titulo.setText(dm.getTitulo());
             holder.descrip.setText(dm.getDescripcion());
-            holder.fechaIni.setText("Creada:"+" "+dm.getFecha_creacion());
+            holder.fechaIni.setText("Inicia:"+" "+dm.getFecha_creacion());
             holder.fechaFin.setText("");
             holder.checa.setText("");
 
         }else if(dm.getTipo()==1){
 
             holder.imagen.setImageResource(R.drawable.alfiler);
-            holder.titulo.setText(dm.getId_nota()+" - "+dm.getTitulo());
+            holder.titulo.setText(dm.getTitulo());
             holder.descrip.setText(dm.getDescripcion());
-            holder.fechaIni.setText("Creada:"+" "+dm.getFecha_creacion());
-            holder.fechaFin.setText("Finaliza:"+" "+dm.getFecha_limite()+" - "+dm.getHora_limite());
+            holder.fechaIni.setText("Inicia:"+" "+dm.getFecha_creacion());
+            holder.fechaFin.setText("Termina:"+" "+dm.getFecha_limite()+" - "+dm.getHora_limite());
 
             if(dm.getChecalo()==0){
 

@@ -201,7 +201,7 @@ public class ActivityDatos extends AppCompatActivity implements View.OnClickList
 
         }else if(type_flag==1){
 
-            Toast.makeText(ActivityDatos.this,R.string.confirmToast_inTarea,Toast.LENGTH_SHORT).show();
+            //Toast.makeText(ActivityDatos.this,R.string.confirmToast_inTarea,Toast.LENGTH_SHORT).show();
 
             Intent atras = new Intent();
             Nota_Serial alum = new Nota_Serial();
