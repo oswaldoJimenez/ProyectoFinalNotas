@@ -151,7 +151,6 @@ public class MainActivity extends AppCompatActivity implements ItemFragment.OnLi
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 viewPager.setCurrentItem(tab.getPosition());
-                //Toast.makeText(MainActivity.this, "Tab selected " +  tab.getPosition(), Toast.LENGTH_SHORT).show();
 
                 nuevo = (Button) findViewById(R.id.btn_new);
 
@@ -182,15 +181,8 @@ public class MainActivity extends AppCompatActivity implements ItemFragment.OnLi
 
     }
 
-
-    /**
-     * Listener that comunicate fragment / recycler with this activity
-     */
     @Override
     public void onListFragmentInteraction(final Nota model) {
-
-        // the user clicked on this item over the list
-        //Toast.makeText(MainActivity.this, Nota.class.getSimpleName() + ":" + model.getId_nota() + " - " +model.getTipo()+ " - " +model.getTitulo(), Toast.LENGTH_LONG).show();
 
 
         String aux[] = new String[]{" "};
@@ -217,7 +209,6 @@ public class MainActivity extends AppCompatActivity implements ItemFragment.OnLi
                     @Override
                     public void onClick(DialogInterface dialog, int which){
 
-                        //Toast.makeText(MainActivity.this,opc[which],Toast.LENGTH_SHORT).show();
 
                         if(opc[which].equals(getString(R.string._delete))){
 
@@ -236,18 +227,15 @@ public class MainActivity extends AppCompatActivity implements ItemFragment.OnLi
 
                                                 if(dao.delete(model.getId_nota()+"")>0){
 
-                                                    //Toast.makeText(getBaseContext(),R.string.del_alert_resultGood,Toast.LENGTH_SHORT).show();
                                                     reiniciarDatos();
 
                                                 }else{
 
-                                                    //Toast.makeText(getBaseContext(),R.string.del_alert_resultBad,Toast.LENGTH_SHORT).show();
 
                                                 }
 
                                             }catch (Exception err){
 
-                                                //Toast.makeText(getBaseContext(),err.getMessage(),Toast.LENGTH_LONG).show();
 
                                             }
 
@@ -258,7 +246,6 @@ public class MainActivity extends AppCompatActivity implements ItemFragment.OnLi
                                         @Override
                                         public void onClick(DialogInterface dialog, int which) {
 
-                                            //Toast.makeText(MainActivity.this, "Presiono CANCEL", Toast.LENGTH_SHORT).show();
 
                                         }
                                     })
@@ -268,7 +255,6 @@ public class MainActivity extends AppCompatActivity implements ItemFragment.OnLi
 
                         }else if(opc[which].equals(getString(R.string._picture))){
 
-                            //Toast.makeText(MainActivity.this, "Presiono Multimedia", Toast.LENGTH_SHORT).show();
 
                             Intent intent = new Intent(getApplication(),ActivityMedia.class);
                             intent.putExtra("idregistro_integer", model.getId_nota());
@@ -277,7 +263,6 @@ public class MainActivity extends AppCompatActivity implements ItemFragment.OnLi
 
                         }else if(opc[which].equals(getString(R.string._video))){
 
-                            //Toast.makeText(MainActivity.this, "Presiono Multimedia", Toast.LENGTH_SHORT).show();
 
                             Intent intent = new Intent(getApplication(), ActivityMediaVideo.class);
                             intent.putExtra("idregistro_integer", model.getId_nota());
@@ -293,7 +278,6 @@ public class MainActivity extends AppCompatActivity implements ItemFragment.OnLi
 
                         }else if(opc[which].equals(getString(R.string._edit))){
 
-                            //Toast.makeText(MainActivity.this, "Presiono Editar", Toast.LENGTH_SHORT).show();
 
                             if(model.getTipo()==0){
 
@@ -400,14 +384,12 @@ public class MainActivity extends AppCompatActivity implements ItemFragment.OnLi
     public void btnCheckList_click(View v){
 
         if(tabFlag.equals("0")){
-            //Toast.makeText(MainActivity.this,R.string.toast_creaNota,Toast.LENGTH_SHORT).show();
 
             Intent intent = new Intent(getApplication(),ActivityDatos.class);
             intent.putExtra("tipo_integer", 0);
 
             startActivityForResult(intent,1000);
         }else if(tabFlag.equals("1")){
-            //Toast.makeText(MainActivity.this,R.string.toast_creaTarea,Toast.LENGTH_SHORT).show();
 
             Intent intent = new Intent(getApplication(),ActivityDatos.class);
             intent.putExtra("tipo_integer", 1);
@@ -417,7 +399,7 @@ public class MainActivity extends AppCompatActivity implements ItemFragment.OnLi
     }
 
 
-
+    //Aqui se crean las notas y tareas
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -431,18 +413,13 @@ public class MainActivity extends AppCompatActivity implements ItemFragment.OnLi
 
                 if(dao.insert(new Nota_Serial(0,objNota.getTipo(),objNota.getTitulo(),objNota.getDescripcion(),objNota.getFecha_creacion(),objNota.getFecha_limite(),objNota.getHora_limite(),objNota.getChecalo()))>0) {
 
-                   // Toast.makeText(getBaseContext(), R.string.toast_notaCreada_, Toast.LENGTH_SHORT).show();
-                    reiniciarDatos();
+                   reiniciarDatos();
 
                 }else{
-
-                   // Toast.makeText(getBaseContext(), R.string.toast_notaCreadaProblem_, Toast.LENGTH_SHORT).show();
 
                 }
 
             }catch (Exception err){
-
-              //  Toast.makeText(getBaseContext(),err.getMessage(),Toast.LENGTH_LONG).show();
 
             }
 
@@ -456,18 +433,18 @@ public class MainActivity extends AppCompatActivity implements ItemFragment.OnLi
 
                 if(dao.insert(new Nota_Serial(0,objNota.getTipo(),objNota.getTitulo(),objNota.getDescripcion(),objNota.getFecha_creacion(),objNota.getFecha_limite(),objNota.getHora_limite(),objNota.getChecalo()))>0) {
 
-                //    Toast.makeText(getBaseContext(), R.string.toast_tareaCreada, Toast.LENGTH_SHORT).show();
+
                     reiniciarDatos();
 
                 }else{
 
-                  //  Toast.makeText(getBaseContext(), R.string.toast_tareaCreadaProblem, Toast.LENGTH_SHORT).show();
+
 
                 }
 
             }catch (Exception err){
 
-              //  Toast.makeText(getBaseContext(),err.getMessage(),Toast.LENGTH_LONG).show();
+
 
             }
 
@@ -480,18 +457,18 @@ public class MainActivity extends AppCompatActivity implements ItemFragment.OnLi
 
                 if(dao.update(objNota) > 0) {
 
-                  //  Toast.makeText(getBaseContext(), R.string.toast_notaEditada, Toast.LENGTH_SHORT).show();
+
                     reiniciarDatos();
 
                 }else{
 
-                  //  Toast.makeText(getBaseContext(), R.string.toast_notaEditadaProblem, Toast.LENGTH_SHORT).show();
+
 
                 }
 
             }catch (Exception err){
 
-              //  Toast.makeText(getBaseContext(),err.getMessage(),Toast.LENGTH_LONG).show();
+
 
             }
 
@@ -504,18 +481,17 @@ public class MainActivity extends AppCompatActivity implements ItemFragment.OnLi
 
                 if(dao.update(objNota) > 0) {
 
-                 //   Toast.makeText(getBaseContext(), R.string.toast_tareaEditada, Toast.LENGTH_SHORT).show();
+
                     reiniciarDatos();
 
                 }else{
 
-                 //   Toast.makeText(getBaseContext(), R.string.toast_tareaEditadaProblem, Toast.LENGTH_SHORT).show();
 
                 }
 
             }catch (Exception err){
 
-            //    Toast.makeText(getBaseContext(),err.getMessage(),Toast.LENGTH_LONG).show();
+
 
             }
 
@@ -529,10 +505,6 @@ public class MainActivity extends AppCompatActivity implements ItemFragment.OnLi
 
     }
 
-    /*public void video(View v) {
-        startActivity(new
-                Intent(this, CapturaVideo.class));
-    }
-    */
+
 
 }
