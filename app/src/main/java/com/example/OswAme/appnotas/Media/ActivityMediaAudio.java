@@ -16,8 +16,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.AttributeSet;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.MediaController;
 import android.widget.Toast;
 
 import com.example.OswAme.appnotas.Datos.DaoAudio;
@@ -47,12 +53,16 @@ public class ActivityMediaAudio extends AppCompatActivity {
     private MediaRecorder grabacion;
     private String archivoSalida = null; //asignamos un nombre a la pista de audio que vamos a agregar
     private Button btn_recorder;
+    private Button btn_play;
+    private Button btn_stop;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_media_audio);
         btn_recorder = (Button)findViewById(R.id.btn_newMedia1);
+        btn_play = (Button)findViewById(R.id.btn_play);
+        btn_stop = (Button)findViewById(R.id.btn_stop);
 
         if (ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE)
                 != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getApplicationContext(),
@@ -135,8 +145,8 @@ public class ActivityMediaAudio extends AppCompatActivity {
             //btn_recorder.setBackgroundResource(R.drawable.stop_rec);
             Toast.makeText(getApplicationContext(), "Grabación finalizada...", Toast.LENGTH_SHORT).show();
 
-            MediaPlayer mediaPlayer = new MediaPlayer();
-            try{
+            //MediaPlayer mediaPlayer = new MediaPlayer();
+
                 MediaAudio objNota = new MediaAudio(0, tomaID, String.valueOf(archivoSalida), "AUDIO");
                 DaoAudio dao = new DaoAudio(ActivityMediaAudio.this);
 
@@ -150,22 +160,30 @@ public class ActivityMediaAudio extends AppCompatActivity {
                     Toast.makeText(getBaseContext(), "El audio no pudo ser guardado", Toast.LENGTH_SHORT).show();
 
                 }
-                mediaPlayer.setDataSource(archivoSalida);
-                mediaPlayer.prepare();
-            }catch (IOException err){
-                Toast.makeText(getBaseContext(),err.getMessage(),Toast.LENGTH_LONG).show();
-            }
+                //mediaPlayer.setDataSource(archivoSalida);
+                //mediaPlayer.prepare();
 
         }
 
     }
 
-    public void reproducir(View view){
 
+    MediaPlayer mediaPlayer = new MediaPlayer();
+   public void play(View v){
+        try {
 
+            mediaPlayer.setDataSource(archivoSalida);
+            mediaPlayer.prepare();
+            mediaPlayer.start();
+        }catch (IOException err){
+            Toast.makeText(getBaseContext(),err.getMessage(),Toast.LENGTH_LONG).show();
+        }
+
+   }
+
+    public void stop(View v) {
+        mediaPlayer.stop();
     }
-
-
 
     private File nombrarArchivo(Context context, String album, String nombre, String extension) throws IOException {
 
@@ -253,4 +271,5 @@ public class ActivityMediaAudio extends AppCompatActivity {
         }
 
     }
+
 }

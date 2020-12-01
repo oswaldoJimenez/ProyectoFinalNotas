@@ -28,7 +28,6 @@
         android:layout_marginRight="14dp"
         android:layout_marginBottom="69dp"
         android:background="#FF1041B5"
-        android:onClick="reproducir"
         android:text="@string/Reproducir"
         android:textColor="@android:color/white" />
 

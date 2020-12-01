@@ -37,7 +37,7 @@ public class AudioAdapter extends RecyclerView.Adapter<AudioAdapter.MediaViewHol
         public MediaViewHolder(View v) {
             super(v);
 
-            imagen = (ImageView) v.findViewById(R.id.foto);
+            //imagen = (ImageView) v.findViewById(R.id.foto);
             nombre = (TextView) v.findViewById(R.id.txt_titulo);
             ruta = (TextView) v.findViewById(R.id.txt_ruta);
 
