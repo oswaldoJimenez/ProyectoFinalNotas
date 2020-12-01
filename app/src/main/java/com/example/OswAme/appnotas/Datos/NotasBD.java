@@ -59,13 +59,21 @@ public class NotasBD extends SQLiteOpenHelper{
             COLUMNS_VIDEOS[2]+" varchar not null,"+
             COLUMNS_VIDEOS[3]+" varchar(100) null);";
 
+    public static final String[]COLUMNS_AUDIOS = {"_id","id_Tarea","dirUri","descripcion"};
+    public static final String TABLE_AUDIOS_NAME="AUDIOS";
+
+    private  final String TABLE_AUDIOS = "create table AUDIOS ("+
+            COLUMNS_AUDIOS[0]+" integer primary key autoincrement, "+
+            COLUMNS_AUDIOS[1]+" integer not null," +
+            COLUMNS_AUDIOS[2]+" varchar not null,"+
+            COLUMNS_AUDIOS[3]+" varchar(100) null);";
+
 
     public NotasBD(Context contexto) {
 
         super(contexto, DB_NAME, null, DB_VERSION);
 
     }
-
 
 
     @Override
@@ -76,6 +84,8 @@ public class NotasBD extends SQLiteOpenHelper{
             sqLiteDatabase.execSQL(TABLE_NOTIFICACIONES);
             sqLiteDatabase.execSQL(TABLE_FOTOS);
             sqLiteDatabase.execSQL(TABLE_VIDEOS);
+            sqLiteDatabase.execSQL(TABLE_AUDIOS);
+
 
         }catch (Exception err){}
 
@@ -88,6 +98,7 @@ public class NotasBD extends SQLiteOpenHelper{
             sqLiteDatabase.execSQL("DROP TABLE IF EXISTS notificaciones");
             sqLiteDatabase.execSQL("DROP TABLE IF EXISTS fotos");
             sqLiteDatabase.execSQL("DROP TABLE IF EXISTS videos");
+            sqLiteDatabase.execSQL("DROP TABLE IF EXISTS audios");
 
             onCreate(sqLiteDatabase);
 

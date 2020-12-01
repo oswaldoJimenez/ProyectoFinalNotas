@@ -17,35 +17,33 @@ public class DaoVideo {
 
 
     public DaoVideo(Context contexto){
-
         this._contexto = contexto;
         this._midb = new NotasBD(contexto).getWritableDatabase();
-
     }
 
 
-    public long insert(Media c){
+    public long insert(MediaVideo c){
 
         ContentValues cv = new ContentValues();
 
         cv.put(NotasBD.COLUMNS_VIDEOS[1],c.getId_TareaNota());
-        cv.put(NotasBD.COLUMNS_VIDEOS[2],c.getDir_uri());
-        cv.put(NotasBD.COLUMNS_VIDEOS[3],c.getDescripMedia());
+        cv.put(NotasBD.COLUMNS_VIDEOS[2],c.getDir_uriVideo());
+        cv.put(NotasBD.COLUMNS_VIDEOS[3],c.getDescripMediaVideo());
 
         return _midb.insert(NotasBD.TABLE_VIDEOS_NAME,null,cv) ;
 
     }
 
 
-    public long update(Media c){
+    public long update(MediaVideo c){
 
         ContentValues cv = new ContentValues();
 
         cv.put(NotasBD.COLUMNS_VIDEOS[1],c.getId_TareaNota());
-        cv.put(NotasBD.COLUMNS_VIDEOS[2],c.getDir_uri());
-        cv.put(NotasBD.COLUMNS_VIDEOS[3],c.getDescripMedia());
+        cv.put(NotasBD.COLUMNS_VIDEOS[2],c.getDir_uriVideo());
+        cv.put(NotasBD.COLUMNS_VIDEOS[3],c.getDescripMediaVideo());
 
-        return _midb.update(NotasBD.TABLE_VIDEOS_NAME, cv, "_id=?", new String[] { String.valueOf( c.getId_media())});
+        return _midb.update(NotasBD.TABLE_VIDEOS_NAME, cv, "_id=?", new String[] { String.valueOf( c.getId_mediaVideo())});
 
     }
 
@@ -67,7 +65,7 @@ public class DaoVideo {
     public List<MediaVideo> buscarTodos() {
 
         List<MediaVideo> notesArrayList = new ArrayList<MediaVideo>();
-        String selectQuery = "SELECT * FROM media";
+        String selectQuery = "SELECT * FROM videos";
         Log.d("", selectQuery);
         SQLiteDatabase db = this._midb;
         Cursor c = db.rawQuery(selectQuery, null);

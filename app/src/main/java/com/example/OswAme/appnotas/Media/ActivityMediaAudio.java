@@ -20,8 +20,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.OswAme.appnotas.Datos.DaoAudio;
 import com.example.OswAme.appnotas.Datos.DaoMedia;
+import com.example.OswAme.appnotas.Datos.DaoVideo;
 import com.example.OswAme.appnotas.Datos.Media;
+import com.example.OswAme.appnotas.Datos.MediaAudio;
+import com.example.OswAme.appnotas.Datos.MediaVideo;
 import com.example.OswAme.appnotas.R;
 
 import java.io.File;
@@ -66,14 +70,19 @@ public class ActivityMediaAudio extends AppCompatActivity {
     }
     public void cargar(){
 
-        List<Media> items = new ArrayList<>();
+        List<MediaAudio> items = new ArrayList<>();
+        DaoAudio dao = new DaoAudio(ActivityMediaAudio.this);
+        items = dao.buscarTodosDeTarea(tomaID);
+
         recycler.setHasFixedSize(true);
 
         // Usar un administrador para LinearLayout
         lManager = new LinearLayoutManager(this);
         recycler.setLayoutManager(lManager);
 
+        adapter = new AudioAdapter(items);
         recycler.setAdapter(adapter);
+
     }
 
     private String mDirAbsoluto = null;
@@ -125,33 +134,35 @@ public class ActivityMediaAudio extends AppCompatActivity {
             btn_recorder = (Button)findViewById(R.id.btn_newMedia1);
             //btn_recorder.setBackgroundResource(R.drawable.stop_rec);
             Toast.makeText(getApplicationContext(), "Grabación finalizada...", Toast.LENGTH_SHORT).show();
+
+            MediaPlayer mediaPlayer = new MediaPlayer();
+            try{
+                MediaAudio objNota = new MediaAudio(0, tomaID, String.valueOf(archivoSalida), "AUDIO");
+                DaoAudio dao = new DaoAudio(ActivityMediaAudio.this);
+
+                if(dao.insert(new MediaAudio(0,objNota.getId_TareaNota(),objNota.getDir_uri_Audio(),objNota.getDescripAudio()))>0) {
+
+                    Toast.makeText(getBaseContext(), "Audio guardado", Toast.LENGTH_SHORT).show();
+                    cargar();
+
+                }else{
+
+                    Toast.makeText(getBaseContext(), "El audio no pudo ser guardado", Toast.LENGTH_SHORT).show();
+
+                }
+                mediaPlayer.setDataSource(archivoSalida);
+                mediaPlayer.prepare();
+            }catch (IOException err){
+                Toast.makeText(getBaseContext(),err.getMessage(),Toast.LENGTH_LONG).show();
+            }
+
         }
 
     }
 
     public void reproducir(View view){
-        MediaPlayer mediaPlayer = new MediaPlayer();
-        try{
-            Media objNota = new Media(0, tomaID, String.valueOf(archivoSalida), "AUDIO");
-            DaoMedia dao = new DaoMedia(ActivityMediaAudio.this);
 
-            if(dao.insert(new Media(0,objNota.getId_TareaNota(),objNota.getDir_uri(),objNota.getDescripMedia()))>0) {
 
-                Toast.makeText(getBaseContext(), "Audio guardado", Toast.LENGTH_SHORT).show();
-                cargar();
-
-            }else{
-
-                Toast.makeText(getBaseContext(), "El audio no pudo ser guardado", Toast.LENGTH_SHORT).show();
-
-            }
-            mediaPlayer.setDataSource(archivoSalida);
-            mediaPlayer.prepare();
-        }catch (IOException err){
-            Toast.makeText(getBaseContext(),err.getMessage(),Toast.LENGTH_LONG).show();
-        }
-        mediaPlayer.start();
-        Toast.makeText(getApplicationContext(), "Reproduciendo audio",Toast.LENGTH_SHORT).show();
     }
 
 
@@ -211,10 +222,10 @@ public class ActivityMediaAudio extends AppCompatActivity {
 
                     try {
 
-                        Media objNota = new Media(0, tomaID, String.valueOf(mDirAbsoluto), "AUDIO");
-                        DaoMedia dao = new DaoMedia(ActivityMediaAudio.this);
+                        MediaAudio objNota = new MediaAudio(0, tomaID, String.valueOf(mDirAbsoluto), "AUDIO");
+                        DaoAudio dao = new DaoAudio(ActivityMediaAudio.this);
 
-                        if(dao.insert(new Media(0,objNota.getId_TareaNota(),objNota.getDir_uri(),objNota.getDescripMedia()))>0) {
+                        if(dao.insert(new MediaAudio(0,objNota.getId_TareaNota(),objNota.getDir_uri_Audio(),objNota.getDescripAudio()))>0) {
 
                             Toast.makeText(getBaseContext(), "Audio guardado", Toast.LENGTH_SHORT).show();
                             cargar();

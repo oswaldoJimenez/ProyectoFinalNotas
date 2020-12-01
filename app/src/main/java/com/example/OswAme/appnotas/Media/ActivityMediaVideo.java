@@ -185,7 +185,7 @@ public class ActivityMediaVideo extends AppCompatActivity {
                         MediaVideo objNota = new MediaVideo(0, tomaID, String.valueOf(mDirAbsoluto), "VIDEO");
                         DaoVideo dao = new DaoVideo(ActivityMediaVideo.this);
 
-                        if(dao.insert(new Media(0,objNota.getId_TareaNota(),objNota.getDir_uriVideo(),objNota.getDescripMediaVideo()))>0) {
+                        if(dao.insert(new MediaVideo(0,objNota.getId_TareaNota(),objNota.getDir_uriVideo(),objNota.getDescripMediaVideo()))>0) {
 
                             Toast.makeText(getBaseContext(), "Video guardado", Toast.LENGTH_SHORT).show();
                             cargar();

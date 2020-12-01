@@ -11,15 +11,14 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.OswAme.appnotas.Datos.Media;
-import com.example.OswAme.appnotas.Datos.MediaVideo;
+import com.example.OswAme.appnotas.Datos.MediaAudio;
 import com.example.OswAme.appnotas.R;
 
 import java.util.List;
 
-public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.MediaViewHolder>{
+public class AudioAdapter extends RecyclerView.Adapter<AudioAdapter.MediaViewHolder>{
 
-    private List<MediaVideo> items;
+    private List<MediaAudio> items;
 
     private View.OnLongClickListener onLongClickListener;
 
@@ -46,7 +45,7 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.MediaViewHol
 
     }
 
-    public VideoAdapter(List<MediaVideo> items) {
+    public AudioAdapter(List<MediaAudio> items) {
         this.items = items;
     }
 
@@ -55,14 +54,13 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.MediaViewHol
         return items.size();
     }
 
+
     @Override
     public MediaViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-
-        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.video_card, viewGroup, false);
+        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.audio_card, viewGroup, false);
         v.setOnLongClickListener(onLongClickListener);
 
         return new MediaViewHolder(v);
-
     }
 
     @Override
@@ -72,8 +70,8 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.MediaViewHol
 
         //viewHolder.imagen.setImageBitmap(bitmap);
 
-        viewHolder.nombre.setText(items.get(i).getDescripMediaVideo());
-        viewHolder.ruta.setText("Ruta: "+String.valueOf(items.get(i).getDir_uriVideo()));
+        viewHolder.nombre.setText(items.get(i).getDescripAudio());
+        viewHolder.ruta.setText("Ruta: "+String.valueOf(items.get(i).getDir_uri_Audio()));
     }
 
 
