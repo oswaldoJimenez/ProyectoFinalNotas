@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.provider.MediaStore;
 import android.util.Log;
 
 import java.util.ArrayList;
@@ -27,11 +28,11 @@ public class DaoVideo {
 
         ContentValues cv = new ContentValues();
 
-        cv.put(NotasBD.COLUMNS_MEDIA[1],c.getId_TareaNota());
-        cv.put(NotasBD.COLUMNS_MEDIA[2],c.getDir_uri());
-        cv.put(NotasBD.COLUMNS_MEDIA[3],c.getDescripMedia());
+        cv.put(NotasBD.COLUMNS_VIDEOS[1],c.getId_TareaNota());
+        cv.put(NotasBD.COLUMNS_VIDEOS[2],c.getDir_uri());
+        cv.put(NotasBD.COLUMNS_VIDEOS[3],c.getDescripMedia());
 
-        return _midb.insert(NotasBD.TABLE_MEDIA_NAME,null,cv) ;
+        return _midb.insert(NotasBD.TABLE_VIDEOS_NAME,null,cv) ;
 
     }
 
@@ -40,11 +41,11 @@ public class DaoVideo {
 
         ContentValues cv = new ContentValues();
 
-        cv.put(NotasBD.COLUMNS_MEDIA[1],c.getId_TareaNota());
-        cv.put(NotasBD.COLUMNS_MEDIA[2],c.getDir_uri());
-        cv.put(NotasBD.COLUMNS_MEDIA[3],c.getDescripMedia());
+        cv.put(NotasBD.COLUMNS_VIDEOS[1],c.getId_TareaNota());
+        cv.put(NotasBD.COLUMNS_VIDEOS[2],c.getDir_uri());
+        cv.put(NotasBD.COLUMNS_VIDEOS[3],c.getDescripMedia());
 
-        return _midb.update(NotasBD.TABLE_MEDIA_NAME, cv, "_id=?", new String[] { String.valueOf( c.getId_media())});
+        return _midb.update(NotasBD.TABLE_VIDEOS_NAME, cv, "_id=?", new String[] { String.valueOf( c.getId_media())});
 
     }
 
@@ -63,9 +64,9 @@ public class DaoVideo {
     }
 
 
-    public List<Media> buscarTodos() {
+    public List<MediaVideo> buscarTodos() {
 
-        List<Media> notesArrayList = new ArrayList<Media>();
+        List<MediaVideo> notesArrayList = new ArrayList<MediaVideo>();
         String selectQuery = "SELECT * FROM media";
         Log.d("", selectQuery);
         SQLiteDatabase db = this._midb;
@@ -75,11 +76,11 @@ public class DaoVideo {
 
             do {
 
-                Media notas = new Media();
-                notas.setId_media(c.getInt(c.getColumnIndex("_id")));
+                MediaVideo notas = new MediaVideo();
+                notas.setId_mediaVideo(c.getInt(c.getColumnIndex("_id")));
                 notas.setId_TareaNota(c.getInt(c.getColumnIndex("id_Tarea")));
-                notas.setDir_uri(c.getString(c.getColumnIndex("dirUri")));
-                notas.setDescripMedia(c.getString(c.getColumnIndex("descripcion")));
+                notas.setDir_uriVideo(c.getString(c.getColumnIndex("dirUri")));
+                notas.setDescripMediaVideo(c.getString(c.getColumnIndex("descripcion")));
 
                 notesArrayList.add(notas);
 
@@ -92,10 +93,10 @@ public class DaoVideo {
     }
 
 
-    public List<Media> buscarTodosDeTarea1(int iden) {
+    public List<MediaVideo> buscarTodosDeTarea1(int iden) {
 
-        List<Media> notesArrayList = new ArrayList<Media>();
-        String selectQuery = "SELECT * FROM media WHERE id_Tarea = '"+iden+"'";
+        List<MediaVideo> notesArrayList = new ArrayList<MediaVideo>();
+        String selectQuery = "SELECT * FROM videos WHERE id_Tarea = '"+iden+"'";
         Log.d("", selectQuery);
         SQLiteDatabase db = this._midb;
         Cursor c = db.rawQuery(selectQuery, null);
@@ -104,11 +105,11 @@ public class DaoVideo {
 
             do {
 
-                Media notas = new Media();
-                notas.setId_media(c.getInt(c.getColumnIndex("_id")));
+                MediaVideo notas = new MediaVideo();
+                notas.setId_mediaVideo(c.getInt(c.getColumnIndex("_id")));
                 notas.setId_TareaNota(c.getInt(c.getColumnIndex("id_Tarea")));
-                notas.setDir_uri(c.getString(c.getColumnIndex("dirUri")));
-                notas.setDescripMedia(c.getString(c.getColumnIndex("descripcion")));
+                notas.setDir_uriVideo(c.getString(c.getColumnIndex("dirUri")));
+                notas.setDescripMediaVideo(c.getString(c.getColumnIndex("descripcion")));
 
                 notesArrayList.add(notas);
 
@@ -121,10 +122,10 @@ public class DaoVideo {
     }
 
 
-    public Media buscarUno(int iden) {
+    public MediaVideo buscarUno(int iden) {
 
-        Media notesUno = new Media();
-        String selectQuery = "SELECT * FROM media WHERE _id = '"+iden+"'";
+        MediaVideo notesUno = new MediaVideo();
+        String selectQuery = "SELECT * FROM videos WHERE _id = '"+iden+"'";
         Log.d("", selectQuery);
         SQLiteDatabase db = this._midb;
         Cursor c = db.rawQuery(selectQuery, null);
@@ -133,11 +134,11 @@ public class DaoVideo {
 
             do {
 
-                Media notas = new Media();
-                notas.setId_media(c.getInt(c.getColumnIndex("_id")));
+                MediaVideo notas = new MediaVideo();
+                notas.setId_mediaVideo(c.getInt(c.getColumnIndex("_id")));
                 notas.setId_TareaNota(c.getInt(c.getColumnIndex("id_Tarea")));
-                notas.setDir_uri(c.getString(c.getColumnIndex("dirUri")));
-                notas.setDescripMedia(c.getString(c.getColumnIndex("descripcion")));
+                notas.setDir_uriVideo(c.getString(c.getColumnIndex("dirUri")));
+                notas.setDescripMediaVideo(c.getString(c.getColumnIndex("descripcion")));
 
                 notesUno = notas;
 

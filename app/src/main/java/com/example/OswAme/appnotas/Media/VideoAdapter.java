@@ -12,13 +12,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.OswAme.appnotas.Datos.Media;
+import com.example.OswAme.appnotas.Datos.MediaVideo;
 import com.example.OswAme.appnotas.R;
 
 import java.util.List;
 
 public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.MediaViewHolder>{
 
-    private List<Media> items;
+    private List<MediaVideo> items;
 
     private View.OnLongClickListener onLongClickListener;
 
@@ -46,7 +47,7 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.MediaViewHol
 
     }
 
-    public VideoAdapter(List<Media> items) {
+    public VideoAdapter(List<MediaVideo> items) {
         this.items = items;
     }
 
@@ -58,7 +59,7 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.MediaViewHol
     @Override
     public MediaViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
 
-        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.photo_card, viewGroup, false);
+        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.video_card, viewGroup, false);
         v.setOnLongClickListener(onLongClickListener);
 
         return new MediaViewHolder(v);
@@ -68,12 +69,12 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.MediaViewHol
     @Override
     public void onBindViewHolder(MediaViewHolder viewHolder, int i) {
 
-        Bitmap bitmap = escalarBitmap(String.valueOf(items.get(i).getDir_uri()), SCALE_FACTOR_IMAGE_VIEW);
+        //Bitmap bitmap = escalarBitmap(String.valueOf(items.get(i).getDir_uri()), SCALE_FACTOR_IMAGE_VIEW);
 
-        viewHolder.imagen.setImageBitmap(bitmap);
+        //viewHolder.imagen.setImageBitmap(bitmap);
 
-        viewHolder.nombre.setText(items.get(i).getId_media()+" - "+items.get(i).getId_TareaNota()+" - "+items.get(i).getDescripMedia());
-        viewHolder.ruta.setText("Ruta: "+String.valueOf(items.get(i).getDir_uri()));
+        viewHolder.nombre.setText(items.get(i).getDescripMediaVideo());
+        viewHolder.ruta.setText("Ruta: "+String.valueOf(items.get(i).getDir_uriVideo()));
     }
 
 

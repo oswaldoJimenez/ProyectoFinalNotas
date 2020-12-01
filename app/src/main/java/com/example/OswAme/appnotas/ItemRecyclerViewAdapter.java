@@ -61,7 +61,6 @@ public class ItemRecyclerViewAdapter extends RecyclerView.Adapter<ItemRecyclerVi
                 holder.checa.setText(R.string.card_checaStatusGOOD);
 
             }
-
         }
 
 

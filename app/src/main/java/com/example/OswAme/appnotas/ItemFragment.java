@@ -1,6 +1,7 @@
 package com.example.OswAme.appnotas;
 
 import android.content.Context;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -8,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.MediaController;
 
 import com.example.OswAme.appnotas.Datos.Nota;
 
@@ -18,6 +20,7 @@ public class ItemFragment extends Fragment {
 
     private Nota[] dummyModels;
     private OnListFragmentInteractionListener interactionListener;
+
 
     public ItemFragment() {
     }
@@ -72,7 +75,6 @@ public class ItemFragment extends Fragment {
             throw new RuntimeException(context.toString()
                     + " must implement OnListFragmentInteractionListener");
         }
-
     }
 
     @Override
@@ -80,8 +82,6 @@ public class ItemFragment extends Fragment {
         super.onDetach();
         interactionListener = null;
     }
-
-
 
     /**
      * This interface must be implemented by activities that contain this

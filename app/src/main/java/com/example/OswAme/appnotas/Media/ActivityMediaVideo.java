@@ -20,6 +20,7 @@ import android.widget.Toast;
 import com.example.OswAme.appnotas.Datos.DaoMedia;
 import com.example.OswAme.appnotas.Datos.DaoVideo;
 import com.example.OswAme.appnotas.Datos.Media;
+import com.example.OswAme.appnotas.Datos.MediaVideo;
 import com.example.OswAme.appnotas.R;
 
 import java.io.File;
@@ -61,7 +62,7 @@ public class ActivityMediaVideo extends AppCompatActivity {
 
     public void cargar(){
 
-        List<Media> items = new ArrayList<>();
+        List<MediaVideo> items = new ArrayList<>();
 
         DaoVideo dao = new DaoVideo(ActivityMediaVideo.this);
         items = dao.buscarTodosDeTarea1(tomaID);
@@ -181,10 +182,10 @@ public class ActivityMediaVideo extends AppCompatActivity {
 
                     try {
 
-                        Media objNota = new Media(0, tomaID, String.valueOf(mDirAbsoluto), "VIDEO");
-                        DaoMedia dao = new DaoMedia(ActivityMediaVideo.this);
+                        MediaVideo objNota = new MediaVideo(0, tomaID, String.valueOf(mDirAbsoluto), "VIDEO");
+                        DaoVideo dao = new DaoVideo(ActivityMediaVideo.this);
 
-                        if(dao.insert(new Media(0,objNota.getId_TareaNota(),objNota.getDir_uri(),objNota.getDescripMedia()))>0) {
+                        if(dao.insert(new Media(0,objNota.getId_TareaNota(),objNota.getDir_uriVideo(),objNota.getDescripMediaVideo()))>0) {
 
                             Toast.makeText(getBaseContext(), "Video guardado", Toast.LENGTH_SHORT).show();
                             cargar();

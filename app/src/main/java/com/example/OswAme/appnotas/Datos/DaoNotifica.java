@@ -73,7 +73,7 @@ public class DaoNotifica {
     public List<Alerta> buscarTodos() {
 
         List<Alerta> notesArrayList = new ArrayList<Alerta>();
-        String selectQuery = "SELECT * FROM alertas";
+        String selectQuery = "SELECT * FROM notificaciones";
         Log.d("", selectQuery);
         SQLiteDatabase db = this._midb;
         Cursor c = db.rawQuery(selectQuery, null);
@@ -104,7 +104,7 @@ public class DaoNotifica {
     public List<Alerta> buscarTodosDeTarea(int iden) {
 
         List<Alerta> notesArrayList = new ArrayList<Alerta>();
-        String selectQuery = "SELECT * FROM alertas WHERE id_Tarea = '"+iden+"'";
+        String selectQuery = "SELECT * FROM notificaciones WHERE id_Tarea = '"+iden+"'";
         Log.d("", selectQuery);
         SQLiteDatabase db = this._midb;
         Cursor c = db.rawQuery(selectQuery, null);
@@ -135,7 +135,7 @@ public class DaoNotifica {
     public List<Alerta> buscarTodosDeFecha(String iden) {
 
         List<Alerta> notesArrayList = new ArrayList<Alerta>();
-        String selectQuery = "SELECT * FROM alertas WHERE fechaAlerta = '"+iden+"'";
+        String selectQuery = "SELECT * FROM notificaciones WHERE fechaAlerta = '"+iden+"'";
         Log.d("", selectQuery);
         SQLiteDatabase db = this._midb;
         Cursor c = db.rawQuery(selectQuery, null);
@@ -166,7 +166,7 @@ public class DaoNotifica {
     public Alerta buscarUno(int iden) {
 
         Alerta notesUno = new Alerta();
-        String selectQuery = "SELECT * FROM alertas WHERE _id = '"+iden+"'";
+        String selectQuery = "SELECT * FROM notificaciones WHERE _id = '"+iden+"'";
         Log.d("", selectQuery);
         SQLiteDatabase db = this._midb;
         Cursor c = db.rawQuery(selectQuery, null);

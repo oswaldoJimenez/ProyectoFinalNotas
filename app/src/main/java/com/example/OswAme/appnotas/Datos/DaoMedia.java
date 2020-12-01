@@ -26,11 +26,11 @@ public class DaoMedia {
 
         ContentValues cv = new ContentValues();
 
-        cv.put(NotasBD.COLUMNS_MEDIA[1],c.getId_TareaNota());
-        cv.put(NotasBD.COLUMNS_MEDIA[2],c.getDir_uri());
-        cv.put(NotasBD.COLUMNS_MEDIA[3],c.getDescripMedia());
+        cv.put(NotasBD.COLUMNS_FOTOS[1],c.getId_TareaNota());
+        cv.put(NotasBD.COLUMNS_FOTOS[2],c.getDir_uri());
+        cv.put(NotasBD.COLUMNS_FOTOS[3],c.getDescripMedia());
 
-        return _midb.insert(NotasBD.TABLE_MEDIA_NAME,null,cv) ;
+        return _midb.insert(NotasBD.TABLE_FOTOS_NAME,null,cv) ;
 
     }
 
@@ -39,11 +39,11 @@ public class DaoMedia {
 
         ContentValues cv = new ContentValues();
 
-        cv.put(NotasBD.COLUMNS_MEDIA[1],c.getId_TareaNota());
-        cv.put(NotasBD.COLUMNS_MEDIA[2],c.getDir_uri());
-        cv.put(NotasBD.COLUMNS_MEDIA[3],c.getDescripMedia());
+        cv.put(NotasBD.COLUMNS_FOTOS[1],c.getId_TareaNota());
+        cv.put(NotasBD.COLUMNS_FOTOS[2],c.getDir_uri());
+        cv.put(NotasBD.COLUMNS_FOTOS[3],c.getDescripMedia());
 
-        return _midb.update(NotasBD.TABLE_MEDIA_NAME, cv, "_id=?", new String[] { String.valueOf( c.getId_media())});
+        return _midb.update(NotasBD.TABLE_FOTOS_NAME, cv, "_id=?", new String[] { String.valueOf( c.getId_media())});
 
     }
 
@@ -65,7 +65,7 @@ public class DaoMedia {
     public List<Media> buscarTodos() {
 
         List<Media> notesArrayList = new ArrayList<Media>();
-        String selectQuery = "SELECT * FROM media";
+        String selectQuery = "SELECT * FROM fotos";
         Log.d("", selectQuery);
         SQLiteDatabase db = this._midb;
         Cursor c = db.rawQuery(selectQuery, null);
@@ -94,7 +94,7 @@ public class DaoMedia {
     public List<Media> buscarTodosDeTarea(int iden) {
 
         List<Media> notesArrayList = new ArrayList<Media>();
-        String selectQuery = "SELECT * FROM media WHERE id_Tarea = '"+iden+"'";
+        String selectQuery = "SELECT * FROM fotos WHERE id_Tarea = '"+iden+"'";
         Log.d("", selectQuery);
         SQLiteDatabase db = this._midb;
         Cursor c = db.rawQuery(selectQuery, null);
@@ -123,7 +123,7 @@ public class DaoMedia {
     public Media buscarUno(int iden) {
 
         Media notesUno = new Media();
-        String selectQuery = "SELECT * FROM media WHERE _id = '"+iden+"'";
+        String selectQuery = "SELECT * FROM fotos WHERE _id = '"+iden+"'";
         Log.d("", selectQuery);
         SQLiteDatabase db = this._midb;
         Cursor c = db.rawQuery(selectQuery, null);

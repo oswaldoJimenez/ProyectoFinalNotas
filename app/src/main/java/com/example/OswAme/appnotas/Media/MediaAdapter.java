@@ -67,7 +67,8 @@ public class MediaAdapter extends RecyclerView.Adapter<MediaAdapter.MediaViewHol
 
         viewHolder.imagen.setImageBitmap(bitmap);
 
-        viewHolder.nombre.setText(items.get(i).getId_media()+" - "+items.get(i).getId_TareaNota()+" - "+items.get(i).getDescripMedia());
+        //viewHolder.nombre.setText(items.get(i).getId_media()+" - "+items.get(i).getId_TareaNota()+" - "+items.get(i).getDescripMedia());
+        viewHolder.nombre.setText(items.get(i).getDescripMedia());
         viewHolder.ruta.setText("Ruta: "+String.valueOf(items.get(i).getDir_uri()));
     }
 
@@ -89,7 +90,6 @@ public class MediaAdapter extends RecyclerView.Adapter<MediaAdapter.MediaViewHol
         bmOptions.inPurgeable = true;
 
         return rotarBitmap(uri, BitmapFactory.decodeFile(uri, bmOptions));
-
     }
 
     /**
