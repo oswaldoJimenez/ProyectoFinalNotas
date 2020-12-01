@@ -49,6 +49,8 @@
         <activity android:name=".Media.ActivityMedia" />
         <service android:name=".Media.Servicio" />
 
+        <receiver android:name=".AlertReceiver" />
+
     </application>
 
 </manifest>

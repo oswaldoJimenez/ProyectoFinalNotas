@@ -1,9 +1,15 @@
 package com.example.OswAme.appnotas.Datos;
 
+import android.app.AlarmManager;
 import android.app.DatePickerDialog;
+import android.app.PendingIntent;
 import android.app.TimePickerDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
+import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -14,11 +20,14 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.example.OswAme.appnotas.AlertReceiver;
 import com.example.OswAme.appnotas.R;
+import com.example.OswAme.appnotas.TimePickerFragment;
 
+import java.text.DateFormat;
 import java.util.Calendar;
 
-public class ActivityDatos extends AppCompatActivity implements View.OnClickListener {
+public class ActivityDatos extends AppCompatActivity implements View.OnClickListener,TimePickerDialog.OnTimeSetListener {
 
     int type_flag = 0;
     int tomaID = 0;
@@ -31,7 +40,7 @@ public class ActivityDatos extends AppCompatActivity implements View.OnClickList
     CheckBox checkCheca;
 
     private int mYear, mMonth, mDay, mHour, mMinute;
-
+    private TextView mTextView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -173,6 +182,43 @@ public class ActivityDatos extends AppCompatActivity implements View.OnClickList
 
         }
 
+        mTextView = findViewById(R.id.txt_horaLimite);
+        Button buttonTimePicker = findViewById(R.id.btn_time);
+        buttonTimePicker.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DialogFragment timePicker = new TimePickerFragment();
+                timePicker.show(getSupportFragmentManager(), "time picker");
+            }
+        });
+
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+    @Override
+    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+        Calendar c = Calendar.getInstance();
+        c.set(Calendar.HOUR_OF_DAY, hourOfDay);
+        c.set(Calendar.MINUTE, minute);
+        c.set(Calendar.SECOND, 0);
+        updateTimeText(c);
+        startAlarm(c);
+    }
+    private void updateTimeText(Calendar c) {
+        String timeText = "";
+        timeText += DateFormat.getTimeInstance(DateFormat.SHORT).format(c.getTime());
+        mTextView.setText(timeText);
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+    private void startAlarm(Calendar c) {
+        AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+        Intent intent = new Intent(this, AlertReceiver.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 1, intent, 0);
+        if (c.before(Calendar.getInstance())) {
+            c.add(Calendar.DATE, 1);
+        }
+        alarmManager.setExact(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), pendingIntent);
     }
 
     public void btnIngresa_click(View v){
@@ -345,25 +391,7 @@ public class ActivityDatos extends AppCompatActivity implements View.OnClickList
 
         }
         //obtener los datos de la hora (horas, minutos).
-        if (v == btnTimePicker) {
 
-            // Get Current Time
-            final Calendar c = Calendar.getInstance();
-            mHour = c.get(Calendar.HOUR_OF_DAY);
-            mMinute = c.get(Calendar.MINUTE);
-
-            // Launch Time Picker Dialog
-            TimePickerDialog timePickerDialog = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
-
-                @Override
-                public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-                    txt_horaLimit.setText(hourOfDay + ":" + minute);
-                }
-
-            }, mHour, mMinute, false);
-            timePickerDialog.show();
-
-        }
 
     }
 
