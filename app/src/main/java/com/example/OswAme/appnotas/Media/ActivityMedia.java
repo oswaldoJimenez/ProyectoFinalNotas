@@ -23,7 +23,6 @@ import android.widget.Toast;
 import com.example.OswAme.appnotas.Datos.DaoMedia;
 import com.example.OswAme.appnotas.Datos.Media;
 import com.example.OswAme.appnotas.R;
-import com.example.OswAme.appnotas.grabadora;
 
 import java.io.File;
 import java.io.IOException;
@@ -57,7 +56,7 @@ public class ActivityMedia extends AppCompatActivity {
             }
         });
 
-        btn_recorder = findViewById(R.id.btn_rec);
+       // btn_recorder = findViewById(R.id.btn_rec);
 
         if (ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE)
                 != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getApplicationContext(),
