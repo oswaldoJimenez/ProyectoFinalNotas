@@ -278,9 +278,4 @@ public class ActivityMedia extends AppCompatActivity {
         Toast.makeText(getApplicationContext(), "Reproduciendo audio", Toast.LENGTH_SHORT).show();
     }
 
-    //Botón Audio
-    public void Siguiente (View view){
-        Intent siguiente = new Intent(this, grabadora.class);
-        startActivity(siguiente);
-    }
-    }
+}

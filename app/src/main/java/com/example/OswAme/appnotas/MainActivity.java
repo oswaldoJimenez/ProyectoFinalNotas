@@ -498,13 +498,4 @@ public class MainActivity extends AppCompatActivity implements ItemFragment.OnLi
         }
 
     }
-
-    public void Siguiente (View view){
-        Intent siguiente = new Intent(this, grabadora.class);
-        startActivity(siguiente);
-
-    }
-
-
-
 }
