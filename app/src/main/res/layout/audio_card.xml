@@ -44,24 +44,10 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginEnd="220dp"
-            android:layout_marginRight="220dp"
-            android:layout_marginBottom="94dp"
-            android:onClick="play"
+            android:layout_marginEnd="152dp"
+            android:layout_marginRight="152dp"
+            android:layout_marginBottom="85dp"
             android:text="Play" />
-
-        <Button
-            android:id="@+id/btn_stop"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="88dp"
-            android:layout_marginRight="88dp"
-            android:layout_marginBottom="93dp"
-            android:onClick="stop"
-            android:text="Stop" />
 
     </RelativeLayout>
 

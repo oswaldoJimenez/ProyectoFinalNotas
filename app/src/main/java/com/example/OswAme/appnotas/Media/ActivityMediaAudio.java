@@ -55,14 +55,13 @@ public class ActivityMediaAudio extends AppCompatActivity {
     private Button btn_recorder;
     private Button btn_play;
     private Button btn_stop;
+    MediaAudio mediaAudio;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_media_audio);
         btn_recorder = (Button)findViewById(R.id.btn_newMedia1);
-        btn_play = (Button)findViewById(R.id.btn_play);
-        btn_stop = (Button)findViewById(R.id.btn_stop);
 
         if (ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE)
                 != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getApplicationContext(),
@@ -78,9 +77,9 @@ public class ActivityMediaAudio extends AppCompatActivity {
 
         cargar();
     }
-    public void cargar(){
+    List<MediaAudio> items = new ArrayList<>();
 
-        List<MediaAudio> items = new ArrayList<>();
+    public void cargar(){
         DaoAudio dao = new DaoAudio(ActivityMediaAudio.this);
         items = dao.buscarTodosDeTarea(tomaID);
 
@@ -100,6 +99,7 @@ public class ActivityMediaAudio extends AppCompatActivity {
     private static final String ALBUM = "GuardaAudio";
     private static final String EXTENSION_MP3 = ".mp3";
     final int MY_PERMISSIONS_REQUEST_READ_ESTORAGE=124;
+
 
     public void Recorder(View view){
         Toast.makeText(ActivityMediaAudio.this,"Grabar audio",Toast.LENGTH_SHORT).show();
@@ -168,21 +168,40 @@ public class ActivityMediaAudio extends AppCompatActivity {
     }
 
 
-    MediaPlayer mediaPlayer = new MediaPlayer();
-   public void play(View v){
-        try {
 
-            mediaPlayer.setDataSource(archivoSalida);
-            mediaPlayer.prepare();
-            mediaPlayer.start();
-        }catch (IOException err){
-            Toast.makeText(getBaseContext(),err.getMessage(),Toast.LENGTH_LONG).show();
-        }
+    Boolean bandera=true;
+    String uri;
+   public void play(View v){
+       MediaPlayer mediaPlayer = new MediaPlayer();
+       if(bandera){
+           try{
+               mediaPlayer.setDataSource(items.get(0).getDir_uri_Audio());
+               mediaPlayer.prepare();
+               mediaPlayer.start();
+           }catch (IOException e){
+               e.printStackTrace();
+           }
+           bandera=false;
+           uri=archivoSalida;
+       }else{
+           try{
+               MediaPlayer mediaPlayer2 = new MediaPlayer();
+               mediaPlayer2.setDataSource(archivoSalida);
+               mediaPlayer2.prepare();
+               mediaPlayer2.start();
+           }catch (IOException e){
+               e.printStackTrace();
+           }
+       }
+
 
    }
 
     public void stop(View v) {
-        mediaPlayer.stop();
+        MediaPlayer mediaPlayer = new MediaPlayer();
+        mediaPlayer.release();
+        mediaPlayer = null;
+
     }
 
     private File nombrarArchivo(Context context, String album, String nombre, String extension) throws IOException {
