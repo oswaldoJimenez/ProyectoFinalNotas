@@ -4,10 +4,12 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.media.ExifInterface;
+import android.media.MediaPlayer;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -34,6 +36,7 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.MediaViewHol
         public ImageView imagen;
         public TextView nombre;
         public TextView ruta;
+        public Button playVideo;
 
         public MediaViewHolder(View v) {
             super(v);
@@ -41,6 +44,7 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.MediaViewHol
             imagen = (ImageView) v.findViewById(R.id.foto);
             nombre = (TextView) v.findViewById(R.id.txt_titulo);
             ruta = (TextView) v.findViewById(R.id.txt_ruta);
+            playVideo = (Button) v.findViewById(R.id.btnPlayVideo);
 
         }
 
@@ -74,6 +78,28 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.MediaViewHol
 
         viewHolder.nombre.setText(items.get(i).getDescripMediaVideo());
         viewHolder.ruta.setText("Ruta: "+String.valueOf(items.get(i).getDir_uriVideo()));
+
+
+
+        try{
+            viewHolder.playVideo.setOnClickListener((v)->{
+                click(i);
+            });
+        }catch (Exception w){
+
+        }
+    }
+
+    private void click(int i) {
+        MediaPlayer mediaPlayer = new MediaPlayer();
+        try{
+            mediaPlayer.setDataSource((items.get(i).getDir_uriVideo()));
+            mediaPlayer.prepare();
+            mediaPlayer.start();
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
 

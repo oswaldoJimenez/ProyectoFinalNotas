@@ -80,29 +80,32 @@ public class AudioAdapter extends RecyclerView.Adapter<AudioAdapter.MediaViewHol
         viewHolder.nombre.setText(items.get(i).getDescripAudio());
         viewHolder.ruta.setText("Ruta: "+String.valueOf(items.get(i).getDir_uri_Audio()));
         MediaPlayer mediaPlayer = new MediaPlayer();
-        viewHolder.btnreproducir.setOnClickListener((v)->{
-            click(mediaPlayer,i);
-        });
+
+        try{
+            viewHolder.btnreproducir.setOnClickListener((v)->{
+                click(i);
+            });
+        }catch (Exception w){
+
+        }
+
 
     }
 
-    int bandera = 0;
 
-    private void click(MediaPlayer mediaPlayer,int i) {
-        if(bandera==0){
-            try{
-                mediaPlayer.setDataSource((items.get(i).getDir_uri_Audio()));
-                mediaPlayer.prepare();
-                mediaPlayer.start();
-                bandera=bandera+1;
-            }catch (IOException e){
-                e.printStackTrace();
-            }
 
-        }else{
-            mediaPlayer.pause();
-            bandera= bandera - 1;
+    private void click(int i) {
+        MediaPlayer mediaPlayer = new MediaPlayer();
+        try{
+            mediaPlayer.setDataSource((items.get(i).getDir_uri_Audio()));
+            mediaPlayer.prepare();
+            mediaPlayer.start();
+
+        }catch (Exception e){
+            e.printStackTrace();
         }
+
+
     }
 
 
